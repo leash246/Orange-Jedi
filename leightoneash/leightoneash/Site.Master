@@ -1,0 +1,88 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site.master.vb" Inherits="leightoneash.Site" %>
+
+<%@ Register Src="~/SubMenu.ascx" TagPrefix="uctrl" TagName="SubMenu" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="Stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    Leighton Eash
+                </h1>
+            </div>
+            <div class="loginDisplay">
+            </div>
+            <div class="clear hideSkiplink menuBackground">
+                <ul class="pureCssMenu" id="ulMenuBase" runat="server">
+                
+                    <uctrl:SubMenu ID="mnuHome" runat="server" HREF="~/Default.aspx" Text="Home" />
+                    <uctrl:SubMenu ID="mnuNFL" runat="server" HREF="~/NFL/NFL.aspx" Text="NFL">
+                        <content>
+                            <ul >
+                                <uctrl:SubMenu ID="mnuNFLPicks" runat="server" HREF="~/NFL/Picks.aspx" Text="Picks" />
+                                <uctrl:SubMenu ID="mnuNFLPast" runat="server" HREF="~/NFL/PastWeeks.aspx" Text="Past Weeks" />
+                                <uctrl:SubMenu ID="mnuNFLAdmin" runat="server" HREF="~/NFL/Admin.aspx" Text="Admin" />
+                                <uctrl:SubMenu ID="mnuNFLStandings" runat="server" HREF="~/NFL/Standings.aspx" Text="Standings" />
+                                <uctrl:SubMenu ID="mnuNFLResults" runat="server" HREF="~/NFL/Results.aspx" Text="Results" />
+                            </ul>
+                        </content>
+                    </uctrl:SubMenu>
+                    <uctrl:SubMenu ID="mnuCards" runat="server" HREF="~/Cards/Cards.aspx" Text="Cards">
+                        <content>
+                            <ul class="pureCssMenum">
+                                <uctrl:SubMenu ID="mnuCardsPitch" runat="server" HREF="~/Cards/Pitch.aspx" Text="Pitch" />
+                                <uctrl:SubMenu ID="mnuCardsPitchDetailed" runat="server" HREF="~/Cards/PitchDetailed.aspx" Text="Pitch - Detailed" />
+                                <uctrl:SubMenu ID="mnuCardsCostabi" runat="server" HREF="~/Cards/Costabi.aspx" Text="Costabi" />
+                            </ul>
+                        </content>
+                    </uctrl:SubMenu>
+                    <uctrl:SubMenu ID="mnuDND" runat="server" HREF="~/DND/CharacterSheet.aspx" Text="D&D">
+                        <content>
+                            <ul class="pureCssMenum">
+                                <uctrl:SubMenu ID="mnuDNDCharSheet" runat="server" HREF="~/DND/CharacterSheet.aspx" Text="Character Sheet" />
+                            </ul>
+                        </content>
+                    </uctrl:SubMenu>
+                    <uctrl:SubMenu ID="mnuAdmin" runat="server" HREF="~/Admin/Admin.aspx" Text="Admin">
+                        <content>
+                            <ul class="pureCssMenum">
+                                <uctrl:SubMenu ID="mnuAdminUsers" runat="server" HREF="~/Admin/ManageUsers.aspx" Text="Manage Users" />
+                            </ul>
+                        </content>
+                    </uctrl:SubMenu>
+                    <uctrl:SubMenu ID="mnuHelp" runat="server" text="Help" >
+                        <content>
+                            <ul class="pureCssMenum">
+                                <uctrl:SubMenu ID="mnuHelpRequestPermission" runat="server" HREF="~/Account/RequestPermissions.aspx" Text="Request Permissions" />
+                                <uctrl:SubMenu ID="mnuHelpChangePassword" runat="server" HREF="~/Account/ChangePassword.aspx" Text="Change Password" />
+                            </ul>
+                        </content>
+                    </uctrl:SubMenu>
+                </ul>
+                
+                <ul class="pureCssMenu" id="ulLoginBase" runat="server" style="float:right;margin-right:10px;">
+                    <uctrl:SubMenu ID="mnuLogin" runat="server" Text="Log In" HREF="~/Account/Login.aspx"/>
+                    <uctrl:SubMenu ID="mnuLogout" runat="server" Text="Log Out" />
+                </ul>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>

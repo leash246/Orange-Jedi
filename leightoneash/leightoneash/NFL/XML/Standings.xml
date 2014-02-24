@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Standings week="1">
+	<Team name="Detroit">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>NFCN</Division>
+	</Team>
+	<Team name="Green Bay">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>NFCN</Division>
+	</Team>
+	<Team name="Minnesota">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>NFCN</Division>
+	</Team>
+	<Team name="Chicago">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>NFCN</Division>
+	</Team>
+
+	<Team name="NY Giants">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>NFCE</Division>
+	</Team>
+	<Team name="Washington">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>NFCE</Division>
+	</Team>
+	<Team name="Dallas">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>NFCE</Division>
+	</Team>
+	<Team name="Philadelphia">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>NFCE</Division>
+	</Team>
+
+	<Team name="Atlanta">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>NFCS</Division>
+	</Team>
+	<Team name="New Orleans">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>NFCS</Division>
+	</Team>
+	<Team name="Carolina">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>NFCS</Division>
+	</Team>
+	<Team name="Tampa Bay">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>NFCS</Division>
+	</Team>
+
+
+	<Team name="St Louis">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>NFCW</Division>
+	</Team>
+	<Team name="Seattle">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>NFCW</Division>
+	</Team>
+	<Team name="San Francisco">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>NFCW</Division>
+	</Team>
+	<Team name="Arizona">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>NFCW</Division>
+	</Team>
+
+	<Team name="NY Jets">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>AFCE</Division>
+	</Team>
+	<Team name="New England">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>AFCE</Division>
+	</Team>
+	<Team name="Miami">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>AFCE</Division>
+	</Team>
+	<Team name="Buffalo">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>AFCE</Division>
+	</Team>
+
+	<Team name="Baltimore">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>AFCN</Division>
+	</Team>
+	<Team name="Pittsburgh">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>AFCN</Division>
+	</Team>
+	<Team name="Cleveland">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>AFCN</Division>
+	</Team>
+	<Team name="Cincinnati">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>AFCN</Division>
+	</Team>
+
+	<Team name="Houston">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>AFCS</Division>
+	</Team>
+	<Team name="Indianapolis">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>AFCS</Division>
+	</Team>
+	<Team name="Tennessee">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>AFCS</Division>
+	</Team>
+	<Team name="Jacksonville">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>AFCS</Division>
+	</Team>
+
+	<Team name="Denver">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>AFCW</Division>
+	</Team>
+	<Team name="Kansas City">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>AFCW</Division>
+	</Team>
+	<Team name="Oakland">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>AFCW</Division>
+	</Team>
+	<Team name="San Diego">
+		<Wins>0</Wins>
+		<Losses>0</Losses>
+		<Ties>0</Ties>
+		<Division>AFCW</Division>
+	</Team>
+</Standings>

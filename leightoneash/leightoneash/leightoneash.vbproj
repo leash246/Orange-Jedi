@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{2B5B9FFF-9B01-44F0-8E22-DB634B5359F8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>leightoneash</RootNamespace>
+    <AssemblyName>leightoneash</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>leightoneash.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>leightoneash.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Account\Login_old.aspx" />
+    <Content Include="Account\Register_old.aspx" />
+    <Content Include="Admin\Admin.aspx" />
+    <Content Include="Admin\ManageUsers.aspx" />
+    <Content Include="Admin\User.ascx" />
+    <Content Include="Cards\Cards.aspx" />
+    <Content Include="Cards\Clubs.png" />
+    <Content Include="Cards\Controls\CostabiHand.ascx" />
+    <Content Include="Cards\Costabi.aspx" />
+    <Content Include="Cards\Diamonds.png" />
+    <Content Include="Cards\Hearts.png" />
+    <Content Include="Cards\PitchDetailed.aspx" />
+    <Content Include="Cards\Pitch.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Admin\AdminNFL.aspx" />
+    <Content Include="Cards\Spades.png" />
+    <Content Include="DND\CharacterSheet.aspx" />
+    <Content Include="DND\Controls\Abilities.ascx" />
+    <Content Include="DND\Controls\Saves.ascx" />
+    <Content Include="DND\Controls\Defenses.ascx" />
+    <Content Include="DND\Controls\SkillLine.ascx" />
+    <Content Include="DND\Controls\Weapon.ascx" />
+    <Content Include="DND\DND.aspx" />
+    <Content Include="NFL\Controls\Game.ascx" />
+    <Content Include="Error.aspx" />
+    <Content Include="NFL\NFL.aspx" />
+    <Content Include="NFL\PastWeeks.aspx" />
+    <Content Include="NFL\Picks.aspx" />
+    <Content Include="NFL\Results.aspx" />
+    <Content Include="NFL\Standings.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="NotAuthorized.aspx" />
+    <Content Include="Account\RequestPermissions.aspx" />
+    <Content Include="Scripts\DnD.js" />
+    <Content Include="Styles\Cards.css" />
+    <Content Include="Styles\DnD.css" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="SubMenu.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.designer.vb">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="About.aspx.vb">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.vb">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.vb">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.vb">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.vb">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login_old.aspx.designer.vb">
+      <DependentUpon>Login_old.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login_old.aspx.vb">
+      <DependentUpon>Login_old.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register_old.aspx.designer.vb">
+      <DependentUpon>Register_old.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register_old.aspx.vb">
+      <DependentUpon>Register_old.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.aspx.designer.vb">
+      <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin.aspx.vb">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageUsers.aspx.designer.vb">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageUsers.aspx.vb">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Admin\User.ascx.designer.vb">
+      <DependentUpon>User.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\User.ascx.vb">
+      <DependentUpon>User.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cards\Controls\CostabiHand.ascx.designer.vb">
+      <DependentUpon>CostabiHand.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Cards\Controls\CostabiHand.ascx.vb">
+      <DependentUpon>CostabiHand.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cards\Costabi.aspx.designer.vb">
+      <DependentUpon>Costabi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cards\Costabi.aspx.vb">
+      <DependentUpon>Costabi.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Classes\BasePage.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cards\Cards.aspx.designer.vb">
+      <DependentUpon>Cards.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cards\Cards.aspx.vb">
+      <DependentUpon>Cards.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cards\PitchDetailed.aspx.designer.vb">
+      <DependentUpon>PitchDetailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cards\PitchDetailed.aspx.vb">
+      <DependentUpon>PitchDetailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cards\Pitch.aspx.designer.vb">
+      <DependentUpon>Pitch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cards\Pitch.aspx.vb">
+      <DependentUpon>Pitch.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Classes\Functions.vb" />
+    <Compile Include="Classes\User.vb" />
+    <Compile Include="Default.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Enums.vb" />
+    <Compile Include="DND\CharacterSheet.aspx.designer.vb">
+      <DependentUpon>CharacterSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DND\CharacterSheet.aspx.vb">
+      <DependentUpon>CharacterSheet.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="DND\Controls\Abilities.ascx.designer.vb">
+      <DependentUpon>Abilities.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DND\Controls\Abilities.ascx.vb">
+      <DependentUpon>Abilities.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DND\Controls\Saves.ascx.designer.vb">
+      <DependentUpon>Saves.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DND\Controls\Saves.ascx.vb">
+      <DependentUpon>Saves.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DND\Controls\Defenses.ascx.designer.vb">
+      <DependentUpon>Defenses.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DND\Controls\Defenses.ascx.vb">
+      <DependentUpon>Defenses.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DND\Controls\SkillLine.ascx.designer.vb">
+      <DependentUpon>SkillLine.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DND\Controls\SkillLine.ascx.vb">
+      <DependentUpon>SkillLine.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DND\Controls\Weapon.ascx.designer.vb">
+      <DependentUpon>Weapon.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="DND\Controls\Weapon.ascx.vb">
+      <DependentUpon>Weapon.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DND\DND.aspx.designer.vb">
+      <DependentUpon>DND.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DND\DND.aspx.vb">
+      <DependentUpon>DND.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Classes\MenuControl.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Admin\AdminNFL.aspx.designer.vb">
+      <DependentUpon>AdminNFL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminNFL.aspx.vb">
+      <DependentUpon>AdminNFL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NFL\Classes\Game.vb" />
+    <Compile Include="NFL\Controls\Game.ascx.designer.vb">
+      <DependentUpon>Game.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="NFL\Controls\Game.ascx.vb">
+      <DependentUpon>Game.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.vb">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.vb">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NFL\NFL.aspx.designer.vb">
+      <DependentUpon>NFL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NFL\NFL.aspx.vb">
+      <DependentUpon>NFL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NFL\MiscFunctions.vb" />
+    <Compile Include="NFL\PastWeeks.aspx.designer.vb">
+      <DependentUpon>PastWeeks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NFL\PastWeeks.aspx.vb">
+      <DependentUpon>PastWeeks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NFL\Picks.aspx.designer.vb">
+      <DependentUpon>Picks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NFL\Picks.aspx.vb">
+      <DependentUpon>Picks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NFL\Results.aspx.designer.vb">
+      <DependentUpon>Results.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NFL\Results.aspx.vb">
+      <DependentUpon>Results.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NFL\Standings.aspx.designer.vb">
+      <DependentUpon>Standings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NFL\Standings.aspx.vb">
+      <DependentUpon>Standings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.vb">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.vb">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="NotAuthorized.aspx.designer.vb">
+      <DependentUpon>NotAuthorized.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NotAuthorized.aspx.vb">
+      <DependentUpon>NotAuthorized.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Account\RequestPermissions.aspx.designer.vb">
+      <DependentUpon>RequestPermissions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RequestPermissions.aspx.vb">
+      <DependentUpon>RequestPermissions.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SubMenu.ascx.designer.vb">
+      <DependentUpon>SubMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="SubMenu.ascx.vb">
+      <DependentUpon>SubMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="NFL\XML\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58412</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

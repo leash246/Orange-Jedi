@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<week number="1" end="09/09">
+	<game day="T">
+		<time>1930</time>
+		<Away>Baltimore</Away>
+		<Home>Denver</Home>
+		<spread>-4</spread>
+		<result></result>
+	</game>
+	<game day="S">
+		<time>1200</time>
+		<Away>Minnesota</Away>
+		<Home>Detroit</Home>
+		<spread>-10</spread>
+		<result></result>
+	</game>
+	<game day="S">
+		<time>1200</time>
+		<Away>New England</Away>
+		<Home>Buffalo</Home>
+		<spread>+9</spread>
+		<result></result>
+	</game>
+	<game day="S">
+		<time>1200</time>
+		<Away>Cincinnati</Away>
+		<Home>Chicago</Home>
+		<spread>+6</spread>
+		<result></result>
+	</game>
+	<game day="S">
+		<time>1200</time>
+		<Away>Miami</Away>
+		<Home>Cleveland</Home>
+		<spread>+3</spread>
+		<result></result>
+	</game>
+	<game day="S">
+		<time>1200</time>
+		<Away>Atlanta</Away>
+		<Home>New Orleans</Home>
+		<spread>-4</spread>
+		<result></result>
+	</game>
+	<game day="S">
+		<time>1200</time>
+		<Away>Tampa Bay</Away>
+		<Home>NY Jets</Home>
+		<spread>-8</spread>
+		<result></result>
+	</game>
+	<game day="S">
+		<time>1200</time>
+		<Away>Tennessee</Away>
+		<Home>Pittsburgh</Home>
+		<spread>-3</spread>
+		<result></result>
+	</game>
+	<game day="S">
+		<time>1200</time>
+		<Away>Oakland</Away>
+		<Home>Indianapolis</Home>
+		<spread>-8</spread>
+		<result></result>
+	</game>
+	<game day="S">
+		<time>1200</time>
+		<Away>Seattle</Away>
+		<Home>Carolina</Home>
+		<spread>-13</spread>
+		<result></result>
+	</game>
+	<game day="S">
+		<time>1200</time>
+		<Away>Kansas City</Away>
+		<Home>Jacksonville</Home>
+		<spread>-5</spread>
+		<result></result>
+	</game>
+	<game day="S">
+		<time>1525</time>
+		<Away>Arizona</Away>
+		<Home>St Louis</Home>
+		<spread>+3</spread>
+		<result></result>
+	</game>
+	<game day="S">
+		<time>1525</time>
+		<Away>Green Bay</Away>
+		<Home>San Francisco</Home>
+		<spread>+3</spread>
+		<result></result>
+	</game>
+	<game day="S">
+		<time>1930</time>
+		<Away>NY Giants</Away>
+		<Home>Dallas</Home>
+		<spread>-2</spread>
+		<result></result>
+	</game>
+	<game day="M">
+		<time>1800</time>
+		<Away>Philadelphia</Away>
+		<Home>Washington</Home>
+		<spread>-6</spread>
+		<result></result>
+		<overunder>0</overunder>
+	</game>
+	<game day="M">
+		<time>2115</time>
+		<Away>Houston</Away>
+		<Home>San Diego</Home>
+		<spread>-1</spread>
+		<result></result>
+		<overunder>0</overunder>
+	</game>
+</week>

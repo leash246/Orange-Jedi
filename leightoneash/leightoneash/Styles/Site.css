@@ -1,0 +1,664 @@
+﻿/* DEFAULTS
+----------------------------------------------------------*/
+
+body   
+{
+    background: #b6b7bc;
+    font-size: .80em;
+    font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: #696969;
+}
+a:link, a:visited
+{
+    color: #034af3;
+}
+
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active
+{
+    color: #034af3;
+}
+
+p
+{
+    margin-bottom: 10px;
+    line-height: 1.6em;
+}
+
+
+/* HEADINGS   
+----------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #666666;
+    font-variant: small-caps;
+    text-transform: none;
+    font-weight: 200;
+    margin-bottom: 0px;
+}
+
+h1
+{
+    font-size: 1.6em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+h2
+{
+    font-size: 1.5em;
+    font-weight: 600;
+    color:Black;
+}
+
+h3
+{
+    font-size: 1.2em;
+}
+
+h4
+{
+    font-size: 1.1em;
+}
+
+h5, h6
+{
+    font-size: 1em;
+}
+
+/* this rule styles <h1> and <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0px;
+}
+
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+.page
+{
+    /*width: 95%;/*960px;*/
+    background-color: #fff;
+    /*margin: 20px auto 0px auto;*/
+    border: 1px solid #496077;
+}
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) 
+and (orientation : portrait) {.page{ width: 320px;}}
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) 
+and (orientation : landscape) {.page{ width: 568px;}}
+/*@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {.page{ width: 760px;}}
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {.page{ width: 1020px;}}*/
+
+.header
+{
+    background: #4D54D8; /* Old browsers */
+    background: -moz-linear-gradient(top,  #4D54D8 0%, #080E73 50%, #4D54D8 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4D54D8), color-stop(50%,#080E73), color-stop(100%,#4D54D8)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #4D54D8 0%,#080E73 50%,#4D54D8 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #4D54D8 0%,#080E73 50%,#4D54D8 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #4D54D8 0%,#080E73 50%,#4D54D8 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #4D54D8 0%,#080E73 50%,#4D54D8 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='4D54D8', endColorstr='#4D54D8',GradientType=0 ); /* IE6-9 */
+
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    
+    width: 100%;
+}
+
+.header h1
+{
+    font-weight: 700;
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+    color: #f9f9f9;
+    border: none;
+    line-height: 2em;
+    font-size: 2em;
+}
+
+.main
+{
+    padding: 0px 12px;
+    margin: 12px 8px 8px 8px;
+    min-height: 420px;
+}
+
+.leftCol
+{
+    padding: 6px 0px;
+    margin: 12px 8px 8px 8px;
+    width: 200px;
+    min-height: 200px;
+}
+
+.footer
+{
+    color: #4e5766;
+    padding: 8px 0px 0px 0px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: normal;
+}
+
+
+/* TAB MENU   
+----------------------------------------------------------*/
+
+.menuBackground
+{
+	/* http://www.colorzilla.com/gradient-editor/#5b9cca+0,005795+37,1c4d70+51,005795+65,5b9cca+100;Custom */
+	background: #FF9840; /* Old browsers */
+    background: -moz-linear-gradient(top,  #FF9840 0%, #FF7600 50%, #FF9840 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FF9840), color-stop(50%,#FF7600), color-stop(100%,#FF9840)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #FF9840 0%,#FF7600 50%,#FF9840 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #FF9840 0%,#FF7600 50%,#FF9840 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #FF9840 0%,#FF7600 50%,#FF9840 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #FF9840 0%,#FF7600 50%,#FF9840 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF9840', endColorstr='#FF9840',GradientType=0 ); /* IE6-9 */
+    
+}
+div.hideSkiplink
+{
+	margin-top:10px;
+    width:100%;
+    -webkit-border-radius: 15px 15px 0px 0px;
+    -moz-border-radius: 15px 15px 0px 0px;
+    border-bottom: 4px solid #FF9840 ;
+    height:35px;
+}
+
+div.menu
+{
+    padding: 4px 0px 4px 8px;
+}
+
+div.menu ul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+}
+
+div.menu ul li a, div.menu ul li a:visited
+{
+    background: #FF9840; /* Old browsers */
+    background: -moz-linear-gradient(top,  #FF9840 0%, #FF7600 50%, #FF9840 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FF9840), color-stop(50%,#FF7600), color-stop(100%,#FF9840)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #FF9840 0%,#FF7600 50%,#FF9840 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #FF9840 0%,#FF7600 50%,#FF9840 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #FF9840 0%,#FF7600 50%,#FF9840 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #FF9840 0%,#FF7600 50%,#FF9840 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF9840', endColorstr='#FF9840',GradientType=0 ); /* IE6-9 */
+    border: 1px #045700 solid;
+    color: #fff;
+    display: block;
+    line-height: 1.35em;
+    padding: 4px 20px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+div.menu ul li a:hover
+{
+    background: #38c331; /* Old browsers */
+    background: -moz-linear-gradient(top,  #38c331 0%, #078600 50%, #38c331 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#38c331), color-stop(50%,#078600), color-stop(100%,#38c331)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #38c331 0%,#078600 50%,#38c331 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #38c331 0%,#078600 50%,#38c331 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #38c331 0%,#078600 50%,#38c331 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #38c331 0%,#078600 50%,#38c331 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#38c331', endColorstr='#38c331',GradientType=0 ); /* IE6-9 */
+    
+    color: #fff;
+    text-decoration: none;
+}
+
+div.menu ul li a:active
+{
+    background-color: #465c71;
+    color: #cfdbe6;
+    text-decoration: none;
+}
+
+
+ul.pureCssMenu
+{
+	margin-top:5px;
+	margin-left:15px;
+	 list-style: none;
+    -webkit-border-radius: 15px 15px 0px 0px;
+    -moz-border-radius: 15px 15px 0px 0px;
+    height:30px;
+    margin-bottom:5px;
+    vertical-align:bottom;
+    float:left;
+}
+
+ul.pureCssMenu ul{display:none}
+ul.pureCssMenu li:hover>ul{display:block}
+ul.pureCssMenu ul{position: absolute;left:-1px;top:98%;}
+ul.pureCssMenu ul ul{position: absolute;left:98%;top:-2px;}
+
+ul.pureCssMenu,ul.pureCssMenu ul {
+	list-style:none;
+	padding:0px 1px 1px 0px;
+	z-index: 1;
+}
+ul.pureCssMenu table {border-collapse:collapse}
+ul.pureCssMenu {
+	display:block;
+	zoom:1;
+	float: left;
+}
+ul.pureCssMenu ul
+{
+   background: #078600; /* Old browsers */
+    background: -moz-linear-gradient(top,  #078600 0%, #045700 50%, #078600 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#078600), color-stop(50%,#045700), color-stop(100%,#078600)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #078600 0%,#045700 50%,#078600 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #078600 0%,#045700 50%,#078600 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #078600 0%,#045700 50%,#078600 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #078600 0%,#045700 50%,#078600 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0acf00', endColorstr='#0acf00',GradientType=0 ); /* IE6-9 */
+    }
+ul.pureCssMenu li
+{
+	display:block;
+	padding-left:5px;
+	padding-right:5px;
+}
+ul.pureCssMenu a:active, ul.pureCssMenu a:focus {outline-style:none;}
+ul.pureCssMenu a, ul.pureCssMenu li.dis a:hover, ul.pureCssMenu li.sep a:hover {
+	display:block;
+	vertical-align:middle;
+	text-align:left;
+	text-decoration:none;
+	padding:5px;
+	_padding-left:0;
+	text-decoration:none;
+	cursor:pointer;
+	color: #fff;
+    font-weight: bold;
+    line-height:18px;
+}
+ul.pureCssMenu span{overflow:hidden;}
+ul.pureCssMenu li 
+{
+    background: #FF9840; /* Old browsers */
+    background: -moz-linear-gradient(top,  #FF7600 0%, #A64D00 50%, #FF7600 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FF7600), color-stop(50%,#A64D00), color-stop(100%,#FF9840)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #FF7600 0%,#A64D00 50%,#FF7600 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #FF7600 0%,#A64D00 50%,#FF7600 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #FF7600 0%,#A64D00 50%,#FF7600 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #FF7600 0%,#A64D00 50%,#FF7600 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF7600', endColorstr='#FF7600',GradientType=0 ); /* IE6-9 */
+    /*border: 1px #045700 solid;
+    color: #fff;
+    display: block;
+    line-height: 1.35em;
+    padding: 4px 20px;
+    text-decoration: none;
+    white-space: nowrap;*/
+	float:left;
+    margin-right: 0px;
+    border-bottom:1px #A64D00 solid;
+    border-top:1px #A64D00 solid;
+    border-right: 2px #A64D00 solid;
+    border-left: 2px #A64D00 solid;
+}
+ul.pureCssMenu ul li {float:left;width:115%;}
+ul.pureCssMenu ul a {
+	text-align:left;
+	white-space:nowrap;
+	width:100%;
+}
+ul.pureCssMenu li.sep{
+	text-align:left;
+	line-height:0;
+	height:100%;
+}
+ul.pureCssMenu li.sep span{
+	float:none;	
+	padding-right:0;
+	width:3px;
+	height:100%;
+	display:inline-block;
+}
+ul.pureCssMenu ul li.sep span{width:100%;height:3px;}
+ul.pureCssMenu li:hover{
+	position:relative;
+	 background: #4D54D8; /* Old browsers */
+    background: -moz-linear-gradient(top,  #4D54D8 0%, #080E73 50%, #4D54D8 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4D54D8), color-stop(50%,#080E73), color-stop(100%,#4D54D8)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #4D54D8 0%,#080E73 50%,#4D54D8 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #4D54D8 0%,#080E73 50%,#4D54D8 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #4D54D8 0%,#080E73 50%,#4D54D8 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #4D54D8 0%,#080E73 50%,#4D54D8 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='4D54D8', endColorstr='#4D54D8',GradientType=0 ); /* IE6-9 */
+
+    color: #fff;
+    
+}
+
+ul.pureCssMenu li.dis a {color: #AAAAAA !important;}
+ul.pureCssMenu img 
+{
+	border: none;
+	float:left;
+	_float:none;
+	margin-right:5px;
+	width:16px;
+	height:16px;
+}
+ul.pureCssMenu ul img {width:16px;height:16px;}
+ul.pureCssMenu img.over{display:none}
+ul.pureCssMenu li.dis a:hover img.over{display:none !important}
+ul.pureCssMenu li.dis a:hover img.def {display:inline !important}
+ul.pureCssMenu li:hover > a img.def  {display:none}
+ul.pureCssMenu li:hover > a img.over {display:inline}
+ul.pureCssMenu a:hover img.over,ul.pureCssMenu a:hover ul img.def,ul.pureCssMenu a:hover a:hover ul img.def,ul.pureCssMenu a:hover a:hover img.over,ul.pureCssMenu a:hover a:hover a:hover img.over{display:inline}
+ul.pureCssMenu a:hover img.def,ul.pureCssMenu a:hover ul img.over,ul.pureCssMenu a:hover a:hover ul img.over,ul.pureCssMenu a:hover a:hover img.def,ul.pureCssMenu a:hover a:hover a:hover img.def{display:none}
+ul.pureCssMenu a:hover ul,ul.pureCssMenu a:hover a:hover ul{display:block}
+ul.pureCssMenu a:hover ul ul{display:none}
+ul.pureCssMenu span{
+	display:block;
+	background-position:right center;
+	background-repeat: no-repeat;
+   padding-right:8px;}
+ul.pureCssMenu li a.pureCssMenui0{font:n;}
+ul.pureCssMenu li a.pureCssMenui0:hover{font:o;}
+
+
+/* FORM ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset
+{
+    margin: 1em 0px;
+    padding: 1em;
+    border: 1px solid #ccc;
+}
+
+fieldset p 
+{
+    margin: 2px 12px 10px 10px;
+}
+
+fieldset.login label, fieldset.register label, fieldset.changePassword label
+{
+    display: block;
+}
+
+fieldset label.inline 
+{
+    display: inline;
+}
+
+legend 
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}
+
+input.textEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+input.passwordEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+div.accountInfo
+{
+    width: 42%;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+
+.clear
+{
+    clear: both;
+}
+
+.title
+{
+    display: block;
+    float: left;
+    text-align: left;
+    width: auto;
+}
+
+.loginDisplay
+{
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    padding: 10px;
+    color: White;
+}
+
+.loginDisplay a:link
+{
+    color: white;
+}
+
+.loginDisplay a:visited
+{
+    color: white;
+}
+
+.loginDisplay a:hover
+{
+    color: white;
+}
+
+.failureNotification
+{
+    font-size: 1.2em;
+    color: Red;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+.submitButton
+{
+    text-align: right;
+    padding-right: 10px;
+}
+
+.AwayFavorite
+{
+    text-align:right;
+    display:inline-block;
+    font-weight:bold;
+    width:15%;
+}
+.HomeFavorite
+{
+    text-align:left;
+    display:inline-block;
+    font-weight:bold;
+    width:15%;
+}
+.AwayDog
+{
+    text-align:right;
+    display:inline-block;
+    width:15%;
+}
+.HomeDog
+{
+    text-align:left;
+    display:inline-block;
+    width:15%;
+}
+.Strike
+{
+    text-decoration:line-through;
+    -moz-text-decoration-color:#ff0000;
+}
+.RecordAway
+{
+    display:inline-block;
+    text-align:right;
+    width:5%;
+}
+.RecordHome
+{
+    display:inline-block;
+    text-align:left;
+    width:5%;
+}
+.lblSpread
+{
+    display:inline-block;
+    text-align:center;
+    width:10%;
+}
+.txtSpread
+{
+    display:inline-block;
+    text-align:center;
+    width:100px;
+}
+.rbtAway
+{
+    display:inline-block;
+    text-align:right;
+    width:5%;
+}
+.rbtHome
+{
+    display:inline-block;
+    text-align:left;
+    width:5%;
+}
+.game1
+{
+    background-color:White;
+}
+.game2
+{
+    background-color:Gray;
+}
+.Center
+{
+    width:82%;
+    font-weight:bold;
+    text-align:center;
+}
+.GameTime
+{
+    display:inline-block;
+    text-align:right;
+    width:100px;
+}
+.ResultsUser
+{
+    display:inline-block;
+    text-align:left;
+    width:150px;
+}
+.ResultsCorrect
+{
+    display:inline-block;
+    text-align:left;
+    width:150px;
+}
+.ResultsTiebreaker
+{
+    display:inline-block;
+    text-align:left;
+    width:50px;
+}
+.StandingsTeam
+{
+    display:inline-block;
+    text-align:left;
+    width:30%;
+    font-weight:bold;
+}
+.StandingsRecord
+{
+    display:inline-block;
+    text-align:left;
+    width:10%;
+}
+.StandingsHeaderTeam
+{
+    display:inline-block;
+    text-align:left;
+    width:30%;
+    font-weight:bold;
+}
+.StandingsHeader
+{
+    display:inline-block;
+    text-align:left;
+    width:10%;
+    font-weight:bold;
+}
+.NFC
+{
+    float:left;
+    width:50%;
+}
+.AFC
+{
+    float:right;
+    width:50%;
+}
+ table.user
+ {
+     border:2px solid black;
+ }
+ td.username
+{
+    width:200px;
+     border:2px solid black;
+}
+ td.name
+{
+    width:200px;
+     border:2px solid black;
+}
+ td.roles
+{
+    width:150px;
+}
+ td.save
+ {
+     width:50px;
+ }

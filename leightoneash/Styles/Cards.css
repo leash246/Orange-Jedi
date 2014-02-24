@@ -1,0 +1,121 @@
+﻿
+.PitchCol
+{
+    display:inline-block;
+    width:10%;
+    height:20px;
+    border-width:1px; 
+    border-color:#000;
+}
+.PitchColCenter
+{
+    display:inline-block;
+    width:10%;
+    height:20px;
+    border-width:1px; 
+    border-color:#000;
+    text-align:center;
+}
+.PitchColRight
+{
+    display:inline-block;
+    width:10%;
+    height:20px;
+    border-width:1px; 
+    border-color:#000;
+    text-align:right;
+}
+.RobTeam
+{Width:125px;}
+.PitchPoints
+{Width:30px;}
+.PitchTeam
+{Width:85px;}
+.RobSuit
+{Width:auto;}
+.RobColRight
+{
+    display:inline-block;
+    width:10%;
+    height:20px;
+    border-width:1px; 
+    border-color:#000;
+    text-align:right;
+}
+.Suit
+{
+        
+}
+.RobCol
+{
+    display:inline-block;
+    width:10%;
+    height:20px;
+    border-width:1px; 
+    border-color:#000;
+}
+.RobColCenter
+{
+    display:inline-block;
+    width:10%;
+    height:20px;
+    border-width:1px; 
+    border-color:#000;
+    text-align:center;
+}
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) 
+and (orientation : portrait) 
+{
+    .PitchCol{width:30px;}
+    .PitchColCenter{width:34px;padding:0px 1px 0px 1px;}
+    .PitchColRight{width:30px;}
+    .RobCol{width:30px;}
+    .RobColCenter{width:34px;padding:0px 1px 0px 1px;}
+    .RobColRight{width:30px;}
+    .RobTeam{width:25px;}
+    .PitchTeam{width:25px;}
+    .PitchPoints{width:25px;}
+    .RobSuit{width:25px;}
+}
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) 
+and (orientation : landscape) 
+{
+    .PitchCol{width:55px;}
+    .PitchColCenter{width:60px;padding:0px 1px 0px 1px;}
+    .PitchColRight{width:55px;}
+    .RobCol{width:55px;}
+    .RobColCenter{width:60px;padding:0px 1px 0px 1px;}
+    .RobColRight{width:55px;}
+    .RobTeam{width:55px;}
+    .PitchTeam{width:55px;}
+}
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)  {
+    .PitchCol{width:72px;}
+    .PitchColCenter{width:75px;padding:0px 1px 0px 1px;}
+    .PitchColRight{width:72px;}
+    .RobCol{width:72px;}
+    .RobColCenter{width:75px;padding:0px 1px 0px 1px;}
+    .RobColRight{width:72px;}
+    .RobTeam{width:70px;padding:0px 1px 0px 1px;}
+    .PitchTeam{width:70px;}
+    .RobSuit{Width:70px;}
+}
+.CostabiScore{width:30px;text-align:right;}
+.CostabiBid, .CostabiTook{width:40px;}
+.CostabiPlayer
+{
+    width:120px;
+    display:inline-block;
+    margin:0px 5px 0px 5px;
+}
+.Dealer
+{
+    background:#222222;
+    border:1px solid black;
+}

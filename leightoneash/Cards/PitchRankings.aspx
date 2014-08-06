@@ -10,14 +10,14 @@ Inherits="leightoneash.PitchRankings" %>
     <div>
     <table style="display:inline-block;">
         <tr>
-            <td><asp:ListBox ID="lstTeamOne" runat="server" Width="200px" Height="300px" /></td>
-            <td><asp:ListBox ID="lstUnassigned" runat="server" Width="200px" Height="300px" /></td>
-            <td><asp:ListBox ID="lstTeamTwo" runat="server" Width="200px" Height="300px" /></td>
+            <td><asp:ListBox ID="lstTeamOne" runat="server" Width="200px" Height="350px" /></td>
+            <td><asp:ListBox ID="lstUnassigned" runat="server" Width="200px" Height="350px" /></td>
+            <td><asp:ListBox ID="lstTeamTwo" runat="server" Width="200px" Height="350px" /></td>
         </tr>
         <tr>
-            <td><asp:Label runat="server" Width="140px" /><asp:Button ID="btnRemoveOne" runat="server" Width="60px" Text="Remove" Enabled="false" /></td>
+            <td><asp:Label runat="server" Width="125px" /><asp:Button ID="btnRemoveOne" runat="server" Width="75px" Text="Remove" Enabled="false" /></td>
             <td><asp:Button ID="btnAddOne" runat="server" Width="30px" Text="&lt;&lt;" /><asp:Label runat="server" Width="140px" /><asp:Button ID="btnAddTwo" runat="server" Width="30px" text="&gt;&gt;" /></td>
-            <td><asp:Button ID="btnRemoveTwo" runat="server" Width="60px" Text="Remove" Enabled="false" /><asp:Label runat="server" Width="140px" /></td>
+            <td><asp:Button ID="btnRemoveTwo" runat="server" Width="75px" Text="Remove" Enabled="false" /><asp:Label runat="server" Width="125px" /></td>
         </tr>
         <tr>
             <td><asp:Label ID="lblTeamOneELO" runat="server" width="150px" /></td>
@@ -51,13 +51,13 @@ Inherits="leightoneash.PitchRankings" %>
     </div>
     <br />
     <div>
-        <asp:Chart ID="chtPitchRankings3333" runat="server" Width="800px" ToolTip="3333 Players">
+        <asp:Chart ID="chtPitchRankings" runat="server" Width="1200px" Height="500px" ToolTip="Pitch Players" >
             <Legends>
                 <asp:Legend />
             </Legends>
             <ChartAreas>
                 <asp:ChartArea Name="ChartArea1">
-                    <AxisY Minimum="1300" Maximum="1750" Title="ELO">
+                    <AxisY Minimum="1200" Maximum="1800" Title="ELO">
                         <MajorGrid LineColor="LightGray" />
                     </AxisY>
                     <AxisX Minimum="0" Title="Game" >
@@ -67,21 +67,5 @@ Inherits="leightoneash.PitchRankings" %>
             </ChartAreas>
         </asp:Chart>
     </div>
-    <div>
-        <asp:Chart ID="chtPitchRankings3024" runat="server" Width="800px" ToolTip="3024 Players">
-            <Legends>
-                <asp:Legend />
-            </Legends>
-            <ChartAreas>
-                <asp:ChartArea Name="ChartArea2">
-                    <AxisY Minimum="1400" Maximum="1600" Title="ELO">
-                        <MajorGrid LineColor="LightGray" />
-                    </AxisY>
-                    <AxisX Minimum="0" Title="Game" >
-                        <MajorGrid LineColor="LightGray" />
-                    </AxisX>
-                </asp:ChartArea>
-            </ChartAreas>
-        </asp:Chart>
-    </div>
+    
 </asp:Content>

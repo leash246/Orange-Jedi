@@ -5,7 +5,8 @@ Public Class Site
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Request.QueryString.Count = 2 Then
             SignIn(Request.QueryString.Item(0), Request.QueryString.Item(1))
-            Response.Redirect("~/Default.aspx")
+            'Response.Redirect("~/Default.aspx")
+            Response.Redirect(Request.Path)
         End If
         InitMenu()
     End Sub
@@ -73,7 +74,9 @@ Public Class Site
     End Sub
 
     Private Sub btnSignIn_ServerClick(sender As Object, e As System.EventArgs) Handles btnSignIn.ServerClick
+
         SignIn()
+
     End Sub
 
     Private Sub btnSignOut_ServerClick(sender As Object, e As System.EventArgs) Handles btnSignOut.ServerClick

@@ -1,0 +1,143 @@
+﻿
+.AwayFavorite
+{
+    text-align:right;
+    display:inline-block;
+    font-weight:bold;
+    width:15%;
+}
+.HomeFavorite
+{
+    text-align:left;
+    display:inline-block;
+    font-weight:bold;
+    width:15%;
+}
+.AwayDog
+{
+    text-align:right;
+    display:inline-block;
+    width:15%;
+}
+.HomeDog
+{
+    text-align:left;
+    display:inline-block;
+    width:15%;
+}
+.Strike
+{
+    text-decoration:line-through;
+    -moz-text-decoration-color:#ff0000;
+}
+.RecordAway
+{
+    display:inline-block;
+    text-align:right;
+    width:5%;
+}
+.RecordHome
+{
+    display:inline-block;
+    text-align:left;
+    width:5%;
+}
+.lblSpread
+{
+    display:inline-block;
+    text-align:center;
+    width:10%;
+}
+.txtSpread
+{
+    display:inline-block;
+    text-align:center;
+    width:100px;
+}
+.rbtAway
+{
+    display:inline-block;
+    text-align:right;
+    width:5%;
+}
+.rbtHome
+{
+    display:inline-block;
+    text-align:left;
+    width:5%;
+}
+.game1
+{
+    background-color:White;
+}
+.game2
+{
+    background-color:Gray;
+}
+.Center
+{
+    width:82%;
+    font-weight:bold;
+    text-align:center;
+}
+.GameTime
+{
+    display:inline-block;
+    text-align:right;
+    width:100px;
+}
+.ResultsUser
+{
+    display:inline-block;
+    text-align:left;
+    width:150px;
+}
+.ResultsCorrect
+{
+    display:inline-block;
+    text-align:left;
+    width:150px;
+}
+.ResultsTiebreaker
+{
+    display:inline-block;
+    text-align:left;
+    width:50px;
+}
+.StandingsTeam
+{
+    display:inline-block;
+    text-align:left;
+    width:30%;
+    font-weight:bold;
+}
+.StandingsRecord
+{
+    display:inline-block;
+    text-align:left;
+    width:10%;
+}
+.StandingsHeaderTeam
+{
+    display:inline-block;
+    text-align:left;
+    width:30%;
+    font-weight:bold;
+}
+.StandingsHeader
+{
+    display:inline-block;
+    text-align:left;
+    width:10%;
+    font-weight:bold;
+}
+.NFC
+{
+    float:left;
+    width:50%;
+}
+.AFC
+{
+    float:right;
+    width:50%;
+}

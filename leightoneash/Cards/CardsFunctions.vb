@@ -247,12 +247,9 @@ Module CardsFunctions
         End Try
 
     End Sub
-    Public Function GetPitchGraphData(Optional ByVal nBuilding As Integer = 0) As DataTable
+    Public Function GetPitchGraphData() As DataTable
         Dim cmd As New SqlCommand("Cards.usp_Get_PitchRankingsGraphData", Connection)
         cmd.CommandType = CommandType.StoredProcedure
-        If nBuilding > 0 Then
-            cmd.Parameters.AddWithValue("@nBuilding", nBuilding)
-        End If
         Dim dt As New DataTable
         Dim da As New SqlDataAdapter(cmd)
         Try
@@ -270,7 +267,6 @@ Module CardsFunctions
         With cmd.Parameters
             .AddWithValue("@nPlayerID", nPlayerID)
             .AddWithValue("@nELO", nELO)
-            If nBuilding > 0 Then .AddWithValue("@nBuilding", nBuilding)
             If nGame > -1 Then .AddWithValue("@nGame", nGame)
         End With
         Try

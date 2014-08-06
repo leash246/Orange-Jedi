@@ -908,8 +908,8 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 }
 .navbar-fixed-top{top:0;border-width:0 0 1px}
 .navbar-fixed-bottom{bottom:0;margin-bottom:0;border-width:1px 0 0}
-.navbar-brand{float:left;padding:15px;font-size:18px;line-height:20px;height:50px}
-.navbar-brand:hover,.navbar-brand:focus{text-decoration:none}
+.navbar-brand,.dropdown-toggle{float:left;padding:15px;font-size:18px;line-height:20px;height:50px}
+.navbar-brand:hover,.navbar-brand:focus,.dropdown-toggle:hover,.dropdown-toggle:focus{text-decoration:none}
 @media (min-width:768px){
 	.navbar>.container .navbar-brand,.navbar>.container-fluid .navbar-brand{margin-left:-15px}
 }
@@ -965,7 +965,7 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 	.navbar-text{float:left;margin-left:15px;margin-right:15px}
 	.navbar-text.navbar-right:last-child{margin-right:0}
 }
-.navbar-default{
+.navbar-default1{
 /*background-color:#FF7600;border-color:#080E73*/
 	background: #FF9840; /* Old browsers */
     background: -moz-linear-gradient(top,  #FF9840 0%, #FF7600 50%, #FF9840 100%); /* FF3.6+ */
@@ -975,9 +975,19 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
     background: -ms-linear-gradient(top,  #FF9840 0%,#FF7600 50%,#FF9840 100%); /* IE10+ */
     background: linear-gradient(to bottom,  #FF9840 0%,#FF7600 50%,#FF9840 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF9840', endColorstr='#FF9840',GradientType=0 ); /* IE6-9 */
-    
 }
-.navbar-default .navbar-brand{color:#080E73}
+.navbar-fixed-top{
+/*background-color:#FF7600;border-color:#080E73*/
+	background: #FF9840; /* Old browsers */
+    background: -moz-linear-gradient(top,  #FF9840 0%, #FF7600 50%, #FF9840 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FF9840), color-stop(50%,#FF7600), color-stop(100%,#FF9840)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #FF9840 0%,#FF7600 50%,#FF9840 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #FF9840 0%,#FF7600 50%,#FF9840 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #FF9840 0%,#FF7600 50%,#FF9840 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #FF9840 0%,#FF7600 50%,#FF9840 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF9840', endColorstr='#FF9840',GradientType=0 ); /* IE6-9 */
+}
+.navbar-default .navbar-brand,.navbar-default .dropdown-toggle{color:#080E73}
 .navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus{color:#5e5e5e;background-color:transparent}
 .navbar-default .navbar-text{color:#080E73}
 .navbar-default .navbar-nav>li>a{color:#080E73}
@@ -988,7 +998,7 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 .navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:focus{background-color:#ddd}
 .navbar-default .navbar-toggle .icon-bar{background-color:#888}
 .navbar-default .navbar-collapse,.navbar-default .navbar-form{border-color:#080E73}
-.navbar-default .navbar-nav>.open>a,.navbar-default .navbar-nav>.open>a:hover,.navbar-default .navbar-nav>.open>a:focus{background-color:#080E73;color:#4D54D8}
+.navbar-default .navbar-nav>.open>a,.navbar-default .navbar-nav>.open>a:hover,.navbar-default .navbar-nav>.open>a:focus{background-color:#080E73;color:#FF9840}
 @media (max-width:767px){
 	.navbar-default .navbar-nav .open .dropdown-menu>li>a{color:#777}
 	.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover,.navbar-default .navbar-nav .open .dropdown-menu>li>a:focus{color:#333;background-color:transparent}
@@ -998,7 +1008,7 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 .navbar-default .navbar-link{color:#777}
 .navbar-default .navbar-link:hover{color:#333}
 .navbar-inverse{background-color:#222;border-color:#080808}
-.navbar-inverse .navbar-brand{color:#999}
+.navbar-inverse .navbar-brand,.navbar-inverse .dropdown-toggle{color:#999}
 .navbar-inverse .navbar-brand:hover,.navbar-inverse .navbar-brand:focus{color:#fff;background-color:transparent}
 .navbar-inverse .navbar-text{color:#999}
 .navbar-inverse .navbar-nav>li>a{color:#999}
@@ -1300,8 +1310,12 @@ button.close{padding:0;cursor:pointer;background:0 0;border:0;-webkit-appearance
 .carousel-inner>.active.left{left:-100%}
 .carousel-inner>.active.right{left:100%}
 .carousel-control{position:absolute;top:0;left:0;bottom:0;width:15%;opacity:.5;filter:alpha(opacity=50);font-size:20px;color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.6)}
-.carousel-control.left{background-image:-webkit-linear-gradient(left,color-stop(rgba(0,0,0,.5) 0),color-stop(rgba(0,0,0,.0001) 100%));background-image:linear-gradient(to right,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1)}
-.carousel-control.right{left:auto;right:0;background-image:-webkit-linear-gradient(left,color-stop(rgba(0,0,0,.0001) 0),color-stop(rgba(0,0,0,.5) 100%));background-image:linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1)}
+.carousel-control.left{background-repeat: repeat-x;
+    background-image: linear-gradient(to right,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);
+}
+.carousel-control.right{left:auto;right:0;background-repeat: repeat-x;
+    background-image: linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
+}
 .carousel-control:hover,.carousel-control:focus{outline:0;color:#fff;text-decoration:none;opacity:.9;filter:alpha(opacity=90)}
 .carousel-control .icon-prev,.carousel-control .icon-next,.carousel-control .glyphicon-chevron-left,.carousel-control .glyphicon-chevron-right{position:absolute;top:50%;z-index:5;display:inline-block}
 .carousel-control .icon-prev,.carousel-control .glyphicon-chevron-left{left:50%}

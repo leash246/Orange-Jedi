@@ -289,21 +289,20 @@ Public Class PitchRankings
     End Sub
     Private Sub CreateGraph()
 
-        Dim dt3333 As DataTable = GetPitchGraphData(3333)
-        Dim dt3024 As DataTable = GetPitchGraphData(3024)
+        Dim dtData As DataTable = GetPitchGraphData()
 
-        Dim ps = From drs As DataRow In dt3333.Rows
+        Dim ps = From drs As DataRow In dtData.Rows
                  Select drs.Item("cPlayerName") Distinct
 
         For Each p In ps
-            CreateGraphSeries(CStr(p), dt3333, chtPitchRankings3333)
+            CreateGraphSeries(CStr(p), dtData, chtPitchRankings)
         Next
-        Dim ps2 = From drs2 As DataRow In dt3024.Rows
-                 Select drs2.Item("cPlayerName") Distinct
+        'Dim ps2 = From drs2 As DataRow In dt3024.Rows
+        '         Select drs2.Item("cPlayerName") Distinct
 
-        For Each p2 In ps2
-            CreateGraphSeries(CStr(p2), dt3024, chtPitchRankings3024)
-        Next
+        'For Each p2 In ps2
+        '    CreateGraphSeries(CStr(p2), dt3024, chtPitchRankings3024)
+        'Next
     End Sub
     Private Sub UpdateStatistics(nWinningTeam As Integer)
         For i As Integer = 0 To TeamOne.Count - 1

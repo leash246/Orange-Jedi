@@ -139,6 +139,7 @@
     <Content Include="Scripts\DnD.js" />
     <Content Include="Styles\Cards.css" />
     <Content Include="Styles\DnD.css" />
+    <Content Include="Styles\NFL.css" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default_1.aspx" />
     <Content Include="Global.asax" />

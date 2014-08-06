@@ -122,20 +122,11 @@ Partial Public Class PitchRankings
     Protected WithEvents btnTeamTwoWin As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''chtPitchRankings3333 control.
+    '''chtPitchRankings control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents chtPitchRankings3333 As Global.System.Web.UI.DataVisualization.Charting.Chart
-
-    '''<summary>
-    '''chtPitchRankings3024 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents chtPitchRankings3024 As Global.System.Web.UI.DataVisualization.Charting.Chart
+    Protected WithEvents chtPitchRankings As Global.System.Web.UI.DataVisualization.Charting.Chart
 End Class

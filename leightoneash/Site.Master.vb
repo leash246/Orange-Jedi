@@ -79,8 +79,4 @@ Public Class Site
 
     End Sub
 
-    Private Sub btnSignOut_ServerClick(sender As Object, e As System.EventArgs) Handles btnSignOut.ServerClick
-        Session.Remove("User")
-        Response.Redirect("~/Default.aspx")
-    End Sub
 End Class

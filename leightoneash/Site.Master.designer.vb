@@ -32,6 +32,15 @@ Partial Public Class Site
     Protected WithEvents HeadContent As Global.System.Web.UI.WebControls.ContentPlaceHolder
 
     '''<summary>
+    '''ScriptMan control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ScriptMan As Global.System.Web.UI.ScriptManager
+
+    '''<summary>
     '''divLogin control.
     '''</summary>
     '''<remarks>
@@ -84,15 +93,6 @@ Partial Public Class Site
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblUser As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''btnSignOut control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnSignOut As Global.System.Web.UI.HtmlControls.HtmlButton
 
     '''<summary>
     '''MainContent control.

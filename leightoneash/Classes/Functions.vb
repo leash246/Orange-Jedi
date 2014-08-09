@@ -1,5 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Net.Mail
+Imports System.Web.UI.DataVisualization.Charting
+
 Module Functions
     Public Function LoginUser(pstrEmail As String) As DataRow
         Dim cmd As New SqlCommand("[Admin].usp_Login", Connection())
@@ -99,5 +101,55 @@ Module Functions
         End If
 
     End Function
+    Private Sub CreateGraphSeries(ByVal cPlayerName As String, ByVal dtPoints As DataTable, ByVal chtPitchRankings As Chart)
+        Dim dv = From dr As DataRow In dtPoints.Rows Where dr.Item("cPlayerName") = cPlayerName
+                 Select dr
+                 Order By dr.Item("nGame")
+        If dv.Count > 0 Then
+            Dim ser As New Series(cPlayerName)
+            ser.ChartType = SeriesChartType.Line
+
+            ser.BorderWidth = 3
+            For Each dr As DataRow In dv
+                ser.Points.AddXY(dr.Item("nGame"), dr.Item("nELO"))
+            Next
+            chtPitchRankings.Series.Add(ser)
+        End If
+    End Sub
+    Public Sub CreateGraph(chtChart As Chart, Optional ByVal cPlayerName As String = "")
+
+        Dim dtData As DataTable = GetPitchGraphData()
+        If cPlayerName <> "" Then
+            'Set the min/max for just this player
+            Dim nMinScore As Integer, nMaxScore As Integer
+            Dim S = From dr As DataRow In dtData.Rows
+                    Where dr.Item("cPlayerName") = cPlayerName
+                    Select dr.Item("nELO")
+
+            If S.Count > 0 Then
+                nMinScore = S.Min
+                nMaxScore = S.Max
+                Dim nRoundUp As Integer = 50 - (nMaxScore Mod 50)
+                Dim nRoundDown As Integer = nMinScore Mod 50
+                chtChart.ChartAreas(0).AxisY.Minimum = nMinScore - nRoundDown
+                chtChart.ChartAreas(0).AxisY.Maximum = nMaxScore + nRoundUp
+            End If
+        End If
+
+        Dim ps = From drs As DataRow In dtData.Rows
+                 Select drs.Item("cPlayerName") Distinct
+
+        For Each p In ps
+            If cPlayerName = CStr(p) Or cPlayerName = "" Then
+                CreateGraphSeries(CStr(p), dtData, chtChart)
+            End If
+        Next
+        'Dim ps2 = From drs2 As DataRow In dt3024.Rows
+        '         Select drs2.Item("cPlayerName") Distinct
+
+        'For Each p2 In ps2
+        '    CreateGraphSeries(CStr(p2), dt3024, chtPitchRankings3024)
+        'Next
+    End Sub
 
 End Module

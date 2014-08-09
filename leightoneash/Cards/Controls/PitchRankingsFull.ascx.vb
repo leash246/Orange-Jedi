@@ -1,6 +1,5 @@
-﻿Imports System.Web.UI.DataVisualization.Charting
-Public Class PitchRankings
-    Inherits System.Web.UI.Page
+﻿Public Class PitchRankingsFull
+    Inherits System.Web.UI.UserControl
     Dim Unassigned As List(Of CardsPlayer)
     Dim TeamOne As List(Of CardsPlayer)
     Dim TeamOneELO As Integer
@@ -12,16 +11,16 @@ Public Class PitchRankings
             TeamOne = New List(Of CardsPlayer)
             TeamTwo = New List(Of CardsPlayer)
             FillUnassignedPlayers()
-            Session("UnassignedPlayers") = Unassigned
-            Session("TeamOne") = TeamOne
-            Session("TeamTwo") = TeamTwo
+            Session("UnassignedPitch") = Unassigned
+            Session("TeamOnePitch") = TeamOne
+            Session("TeamTwoPitch") = TeamTwo
             SetListBox(lstUnassigned, Unassigned, "ListBoxDisplay", "ID")
             SetListBox(lstTeamOne, TeamOne, "ListBoxDisplay", "ID")
             SetListBox(lstTeamTwo, TeamTwo, "ListBoxDisplay", "ID")
         Else
-            Unassigned = Session("UnassignedPlayers")
-            TeamOne = Session("TeamOne")
-            TeamTwo = Session("TeamTwo")
+            Unassigned = Session("UnassignedPitch")
+            TeamOne = Session("TeamOnePitch")
+            TeamTwo = Session("TeamTwoPitch")
             TeamOneELO = Session("TeamOneELO")
             TeamTwoELO = Session("TeamTwoELO")
         End If
@@ -79,6 +78,7 @@ Public Class PitchRankings
                 Dim nPlayerID As Integer = lstUnassigned.Items(idx).Value
                 AddToTeamOne(nPlayerID)
             Next
+            SetListBoxes()
         End If
     End Sub
     Private Sub btnAddTwo_Click(sender As Object, e As System.EventArgs) Handles btnAddTwo.Click
@@ -87,6 +87,7 @@ Public Class PitchRankings
                 Dim nPlayerID As Integer = lstUnassigned.Items(idx).Value
                 AddToTeamTwo(nPlayerID)
             Next
+            SetListBoxes()
         End If
     End Sub
     Private Sub btnRemoveOne_Click(sender As Object, e As System.EventArgs) Handles btnRemoveOne.Click
@@ -94,6 +95,7 @@ Public Class PitchRankings
             For Each idx As Integer In lstTeamOne.GetSelectedIndices
                 Dim nPlayerID As Integer = lstTeamOne.Items(idx).Value
                 UnassignFromTeam(nPlayerID)
+                SetListBoxes()
             Next
         End If
     End Sub
@@ -103,6 +105,7 @@ Public Class PitchRankings
                 Dim nPlayerID As Integer = lstTeamTwo.Items(idx).Value
                 UnassignFromTeam(nPlayerID)
             Next
+            SetListBoxes()
         End If
     End Sub
 
@@ -111,32 +114,24 @@ Public Class PitchRankings
             If objPlayer.ID = nID Then
                 Unassigned.Remove(objPlayer)
                 TeamOne.Add(objPlayer)
-                SetTeamELO()
                 btnRemoveOne.Enabled = True
                 Exit For
             End If
         Next
-        Session("TeamOne") = TeamOne
-        Session("UnassignedPlayers") = Unassigned
-        SetListBox(lstUnassigned, Unassigned, "ListBoxDisplay", "ID")
-        SetListBox(lstTeamOne, TeamOne, "ListBoxDisplay", "ID")
-        SetListBox(lstTeamTwo, TeamTwo, "ListBoxDisplay", "ID")
+        Session("TeamOnePitch") = TeamOne
+        Session("UnassignedPitch") = Unassigned
     End Sub
     Private Sub AddToTeamTwo(nID As Integer)
         For Each objPlayer As CardsPlayer In Unassigned
             If objPlayer.ID = nID Then
                 Unassigned.Remove(objPlayer)
                 TeamTwo.Add(objPlayer)
-                SetTeamELO()
                 btnRemoveTwo.Enabled = True
                 Exit For
             End If
         Next
-        Session("TeamTwo") = TeamTwo
-        Session("UnassignedPlayers") = Unassigned
-        SetListBox(lstUnassigned, Unassigned, "ListBoxDisplay", "ID")
-        SetListBox(lstTeamOne, TeamOne, "ListBoxDisplay", "ID")
-        SetListBox(lstTeamTwo, TeamTwo, "ListBoxDisplay", "ID")
+        Session("TeamTwoPitch") = TeamTwo
+        Session("UnassignedPitch") = Unassigned
     End Sub
     Private Sub UnassignFromTeam(nID As Integer)
         For Each objPlayer As CardsPlayer In TeamOne
@@ -159,13 +154,15 @@ Public Class PitchRankings
                 Exit For
             End If
         Next
-        SetTeamELO()
-        Session("TeamOne") = TeamOne
-        Session("TeamTwo") = TeamTwo
-        Session("UnassignedPlayers") = Unassigned
+        Session("TeamOnePitch") = TeamOne
+        Session("TeamTwoPitch") = TeamTwo
+        Session("UnassignedPitch") = Unassigned
+    End Sub
+    Private Sub SetListBoxes()
         SetListBox(lstUnassigned, Unassigned, "ListBoxDisplay", "ID")
         SetListBox(lstTeamOne, TeamOne, "ListBoxDisplay", "ID")
         SetListBox(lstTeamTwo, TeamTwo, "ListBoxDisplay", "ID")
+        SetTeamELO()
     End Sub
 #End Region
     Private Sub CalculateGameResults(ByVal nTeamOneResult As Enums.enmCardsResult, ByVal nTeamTwoResult As Enums.enmCardsResult)
@@ -211,6 +208,18 @@ Public Class PitchRankings
     End Sub
     Private Sub btnDraw_Click(sender As Object, e As System.EventArgs) Handles btnDraw.Click
         CalculateGameResults(Enums.enmCardsResult.Draw, Enums.enmCardsResult.Draw)
+    End Sub
+    Private Sub btnReset_Click(sender As Object, e As System.EventArgs) Handles btnReset.Click
+        Dim nPlayerID = (From objPlayer As CardsPlayer In TeamOne
+                        Select objPlayer.ID).Union(From objPlayer2 As CardsPlayer In TeamTwo
+                                                   Select objPlayer2.ID)
+        If nPlayerID.Count > 0 Then
+            For Each i As Integer In nPlayerID.ToList
+                UnassignFromTeam(i)
+            Next
+        End If
+
+        SetListBoxes()
     End Sub
     Private Sub SendGameUpdateEmail(nWinningTeam As Integer)
         Dim objUser As User = Session("User")
@@ -296,4 +305,5 @@ Public Class PitchRankings
             Next
         Next
     End Sub
+
 End Class

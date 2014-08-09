@@ -29,9 +29,13 @@
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown">Cards <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
-                                <li><a class="dropdown-item" href="/Cards/CostabiRankings.aspx">Costabi Rankings</a></li>
+                                <li><a class="dropdown-item" href="/Cards.aspx#CR">Costabi Rankings</a></li>
+                                <li><a class="dropdown-item" href="/Cards.aspx#PR">Pitch Rankings</a></li>
+                                <li><a class="dropdown-item" href="/Cards.aspx#Scoresheet">Pitch Scoresheet</a></li>
+                                <li><a class="dropdown-item" href="/Cards.aspx#PS">Pitch Statistics</a></li>
+                                <%--<li><a class="dropdown-item" href="/Cards/CostabiRankings.aspx">Costabi Rankings</a></li>
                                 <li><a class="dropdown-item" href="/Cards/PitchRankings.aspx">Pitch Rankings</a></li>
-                                <li><a class="dropdown-item" href="/Cards/PitchStatistics.aspx">Pitch Statistics</a></li>
+                                <li><a class="dropdown-item" href="/Cards/PitchStatistics.aspx">Pitch Statistics</a></li>--%>
                             </ul>
                         </li>
                     </ul>
@@ -60,7 +64,7 @@
             </nav>
         <div class="main">
             <form runat="server">
-    <asp:ScriptManager ID="ScriptMan" runat="server">
+    <asp:ScriptManager ID="ScriptMan" runat="server" EnablePartialRendering="true">
     </asp:ScriptManager>
                 <br />
                 <br />

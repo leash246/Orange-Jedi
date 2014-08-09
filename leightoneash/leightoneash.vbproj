@@ -97,9 +97,13 @@
     <Content Include="Admin\Admin.aspx" />
     <Content Include="Admin\ManageUsers.aspx" />
     <Content Include="Admin\User.ascx" />
-    <Content Include="Cards\Cards.aspx" />
+    <Content Include="Cards.aspx" />
     <Content Include="Cards\Clubs.png" />
     <Content Include="Cards\Controls\CostabiHand.ascx" />
+    <Content Include="Cards\Controls\CostabiRankingsFull.ascx" />
+    <Content Include="Cards\Controls\PitchRankingsFull.ascx" />
+    <Content Include="Cards\Controls\PitchScoresheet.ascx" />
+    <Content Include="Cards\Controls\PitchStatisticsFull.ascx" />
     <Content Include="Cards\CostabiRankings.aspx" />
     <Content Include="Cards\Costabi.aspx" />
     <Content Include="Cards\Diamonds.png" />
@@ -222,6 +226,34 @@
       <DependentUpon>CostabiHand.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Cards\Controls\CostabiRankingsFull.ascx.designer.vb">
+      <DependentUpon>CostabiRankingsFull.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Cards\Controls\CostabiRankingsFull.ascx.vb">
+      <DependentUpon>CostabiRankingsFull.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cards\Controls\PitchRankingsFull.ascx.designer.vb">
+      <DependentUpon>PitchRankingsFull.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Cards\Controls\PitchRankingsFull.ascx.vb">
+      <DependentUpon>PitchRankingsFull.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cards\Controls\PitchScoresheet.ascx.designer.vb">
+      <DependentUpon>PitchScoresheet.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Cards\Controls\PitchScoresheet.ascx.vb">
+      <DependentUpon>PitchScoresheet.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cards\Controls\PitchStatisticsFull.ascx.designer.vb">
+      <DependentUpon>PitchStatisticsFull.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Cards\Controls\PitchStatisticsFull.ascx.vb">
+      <DependentUpon>PitchStatisticsFull.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Cards\CostabiRankings.aspx.designer.vb">
       <DependentUpon>CostabiRankings.aspx</DependentUpon>
     </Compile>
@@ -253,10 +285,10 @@
     <Compile Include="Classes\BasePage.vb">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Cards\Cards.aspx.designer.vb">
+    <Compile Include="Cards.aspx.designer.vb">
       <DependentUpon>Cards.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Cards\Cards.aspx.vb">
+    <Compile Include="Cards.aspx.vb">
       <DependentUpon>Cards.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>

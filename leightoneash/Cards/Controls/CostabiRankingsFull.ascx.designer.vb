@@ -11,77 +11,68 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class PitchStatistics
+Partial Public Class CostabiRankingsFull
 
     '''<summary>
-    '''ddlPlayers control.
+    '''lstUnassigned control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ddlPlayers As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents lstUnassigned As Global.System.Web.UI.WebControls.ListBox
 
     '''<summary>
-    '''ddlSize control.
+    '''lstPlayers control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ddlSize As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents lstPlayers As Global.System.Web.UI.WebControls.ListBox
 
     '''<summary>
-    '''btnStatistics control.
+    '''Label1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents btnStatistics As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''chtTeammates4 control.
+    '''btnAdd control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents chtTeammates4 As Global.System.Web.UI.DataVisualization.Charting.Chart
+    Protected WithEvents btnAdd As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''chtTeammates6 control.
+    '''btnRemove control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents chtTeammates6 As Global.System.Web.UI.DataVisualization.Charting.Chart
+    Protected WithEvents btnRemove As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''chtOpponents4 control.
+    '''Label2 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents chtOpponents4 As Global.System.Web.UI.DataVisualization.Charting.Chart
+    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''chtOpponents6 control.
+    '''btnUpdate control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents chtOpponents6 As Global.System.Web.UI.DataVisualization.Charting.Chart
-
-    '''<summary>
-    '''chtPitchRankings control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents chtPitchRankings As Global.System.Web.UI.DataVisualization.Charting.Chart
+    Protected WithEvents btnUpdate As Global.System.Web.UI.WebControls.Button
 End Class

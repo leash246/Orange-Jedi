@@ -1,6 +1,6 @@
 ﻿Imports System.Web.UI.DataVisualization.Charting
-Public Class PitchStatistics
-    Inherits System.Web.UI.Page
+Public Class PitchStatisticsFull
+    Inherits System.Web.UI.UserControl
     Dim dtT4, dtT6, dtO4, dtO6 As DataTable
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
@@ -10,8 +10,8 @@ Public Class PitchStatistics
                 ddlPlayers.Items.Add(New ListItem(dr.Item("cPlayerName"), dr.Item("nPlayerID")))
             Next
 
-
         End If
+        upGraphs.Visible = False
     End Sub
     Private Sub CreateGraphSeries(cht As Chart, cStatus As String, cPlayerName As String, nGameSize As Integer)
         cht.Titles.Add(cPlayerName & "'s " & cStatus & "s - " & nGameSize & " player")
@@ -44,6 +44,8 @@ Public Class PitchStatistics
                 CreateGraphSeries(chtOpponents4, "Opponent", dtO4.Rows(0).Item("cPlayerName"), 4)
                 chtOpponents4.DataBind()
             End If
+        Else
+            chtOpponents4.Visible = False
         End If
         If nGameSize <> 4 Then
             dtT6 = GetPitchTeammateStatistics(nPlayer, 6)
@@ -58,9 +60,12 @@ Public Class PitchStatistics
                 CreateGraphSeries(chtOpponents6, "Opponent", dtO6.Rows(0).Item("cPlayerName"), 6)
                 chtOpponents6.DataBind()
             End If
+        Else
+            chtOpponents6.Visible = False
         End If
         Dim dtPlayers As DataTable = GetPitchRankings()
         Dim cPlayerName As String = dtPlayers.Select("nPlayerID = " & nPlayer)(0).Item("cPlayerName")
         Functions.CreateGraph(chtPitchRankings, cPlayerName)
+        upGraphs.Visible = True
     End Sub
 End Class

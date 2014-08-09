@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class PitchRankings
+Partial Public Class PitchRankingsFull
 
     '''<summary>
     '''upBoxes control.
@@ -50,6 +50,15 @@ Partial Public Class PitchRankings
     Protected WithEvents lstTeamTwo As Global.System.Web.UI.WebControls.ListBox
 
     '''<summary>
+    '''Label1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''btnRemoveOne control.
     '''</summary>
     '''<remarks>
@@ -68,6 +77,15 @@ Partial Public Class PitchRankings
     Protected WithEvents btnAddOne As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
+    '''btnReset control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnReset As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''btnAddTwo control.
     '''</summary>
     '''<remarks>
@@ -84,6 +102,15 @@ Partial Public Class PitchRankings
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnRemoveTwo As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Label3 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label3 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''lblTeamOneELO control.

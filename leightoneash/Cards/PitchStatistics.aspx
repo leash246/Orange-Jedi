@@ -49,4 +49,21 @@ Inherits="leightoneash.PitchStatistics" %>
         </ChartAreas>
         </asp:Chart>
     </div>
+    <div>
+        <asp:Chart ID="chtPitchRankings" runat="server" Width="1200px" Height="500px" ToolTip="Pitch ELO Trend" >
+            <Legends>
+                <asp:Legend />
+            </Legends>
+            <ChartAreas>
+                <asp:ChartArea Name="ChartArea1">
+                    <AxisY Minimum="1200" Maximum="1800" Title="ELO">
+                        <MajorGrid LineColor="LightGray" />
+                    </AxisY>
+                    <AxisX Minimum="0" Title="Game" >
+                        <MajorGrid LineColor="LightGray" Interval="10" />
+                    </AxisX>
+                </asp:ChartArea>
+            </ChartAreas>
+        </asp:Chart>
+    </div>
 </asp:Content>

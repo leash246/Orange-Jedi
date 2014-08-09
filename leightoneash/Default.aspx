@@ -19,17 +19,17 @@ Inherits="leightoneash._Default" %>
         <div class="col-md-4">
           <h2>Costabi Rankings</h2>
           <p>Go here to view/update rankings for Costabi. You must be logged in to a valid account to actually update rankings.</p>
-          <p><a class="btn btn-default" href="/Cards/CostabiRankings.aspx" role="button">Take me there! &raquo;</a></p>
+          <p><a class="btn btn-default" href="/Cards.aspx#CR" role="button">Take me there! &raquo;</a></p>
         </div>
         <div class="col-md-4">
           <h2>Pitch Rankings</h2>
           <p>Go here to view/update rankings for Pitch. You must be logged in to a valid account to actually update rankings.</p>
-          <p><a class="btn btn-default" href="/Cards/PitchRankings.aspx" role="button">Take me there! &raquo;</a></p>
+          <p><a class="btn btn-default" href="/Cards.aspx#PR" role="button">Take me there! &raquo;</a></p>
        </div>
         <div class="col-md-4">
           <h2>Pitch Statistics</h2>
           <p>Go here to view various statistics regarding teammates and opponents for pitch players.</p>
-          <p><a class="btn btn-default" href="/Cards/PitchStatistics.aspx" role="button">Take me there! &raquo;</a></p>
+          <p><a class="btn btn-default" href="/Cards.aspx#PS" role="button">Take me there! &raquo;</a></p>
         </div>
       </div>
 

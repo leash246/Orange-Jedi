@@ -95,7 +95,7 @@ Public Class Results
             dr.Item("Correct") = nCorrect
             dr.Item("Tiebreaker") = Math.Abs(nTiebreaker - nScore)
             dtResultsList.Rows.Add(dr)
-
+            AddUserToGraph(cUser, nCorrect, chtNFLResults)
         Next
         Dim dv As New DataView(dtResultsList)
         dv.Sort = "Correct desc, Tiebreaker asc"

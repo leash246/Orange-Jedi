@@ -151,5 +151,10 @@ Module Functions
         '    CreateGraphSeries(CStr(p2), dt3024, chtPitchRankings3024)
         'Next
     End Sub
-
+    Public Sub AddUserToGraph(cUser As String, nCorrect As Integer, chtChart As Chart)
+        Dim p As New DataPoint()
+        p.AxisLabel = cUser
+        p.SetValueY(nCorrect)
+        chtChart.Series(0).Points.Add(p)
+    End Sub
 End Module

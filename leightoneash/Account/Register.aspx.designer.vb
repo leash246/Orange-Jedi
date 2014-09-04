@@ -10,132 +10,134 @@
 Option Strict On
 Option Explicit On
 
+Namespace Account
 
-Partial Public Class Register
+    Partial Public Class Register
 
-    '''<summary>
-    '''txtFName control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtFName As Global.System.Web.UI.WebControls.TextBox
+        '''<summary>
+        '''Panel1 control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
 
-    '''<summary>
-    '''txtMName control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtMName As Global.System.Web.UI.WebControls.TextBox
+        '''<summary>
+        '''txtFName control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents txtFName As Global.System.Web.UI.WebControls.TextBox
 
-    '''<summary>
-    '''txtLName control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtLName As Global.System.Web.UI.WebControls.TextBox
+        '''<summary>
+        '''txtMName control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents txtMName As Global.System.Web.UI.WebControls.TextBox
 
-    '''<summary>
-    '''txtEmail control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtEmail As Global.System.Web.UI.WebControls.TextBox
+        '''<summary>
+        '''txtLName control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents txtLName As Global.System.Web.UI.WebControls.TextBox
 
-    '''<summary>
-    '''vUserName control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents vUserName As Global.System.Web.UI.WebControls.RequiredFieldValidator
+        '''<summary>
+        '''txtEmail control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents txtEmail As Global.System.Web.UI.WebControls.TextBox
 
-    '''<summary>
-    '''txtEmail2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtEmail2 As Global.System.Web.UI.WebControls.TextBox
+        '''<summary>
+        '''vUserName control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents vUserName As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
-    '''<summary>
-    '''CompareEmail control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents CompareEmail As Global.System.Web.UI.WebControls.CompareValidator
+        '''<summary>
+        '''txtEmail2 control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents txtEmail2 As Global.System.Web.UI.WebControls.TextBox
 
-    '''<summary>
-    '''txtUserPass control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtUserPass As Global.System.Web.UI.WebControls.TextBox
+        '''<summary>
+        '''CompareEmail control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents CompareEmail As Global.System.Web.UI.WebControls.CompareValidator
 
-    '''<summary>
-    '''vUserPass control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents vUserPass As Global.System.Web.UI.WebControls.RequiredFieldValidator
+        '''<summary>
+        '''txtUserPass control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents txtUserPass As Global.System.Web.UI.WebControls.TextBox
 
-    '''<summary>
-    '''txtUserPass2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtUserPass2 As Global.System.Web.UI.WebControls.TextBox
+        '''<summary>
+        '''vUserPass control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents vUserPass As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
-    '''<summary>
-    '''ConfirmPasswordRequired control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ConfirmPasswordRequired As Global.System.Web.UI.WebControls.RequiredFieldValidator
+        '''<summary>
+        '''txtUserPass2 control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents txtUserPass2 As Global.System.Web.UI.WebControls.TextBox
 
-    '''<summary>
-    '''ComparePassword control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ComparePassword As Global.System.Web.UI.WebControls.CompareValidator
+        '''<summary>
+        '''ComparePassword control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents ComparePassword As Global.System.Web.UI.WebControls.CompareValidator
 
-    '''<summary>
-    '''cmdRegister control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents cmdRegister As Global.System.Web.UI.WebControls.Button
+        '''<summary>
+        '''cmdRegister control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents cmdRegister As Global.System.Web.UI.WebControls.Button
 
-    '''<summary>
-    '''lblMsg control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblMsg As Global.System.Web.UI.WebControls.Label
-End Class
+        '''<summary>
+        '''lblMsg control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents lblMsg As Global.System.Web.UI.WebControls.Label
+    End Class
+End Namespace

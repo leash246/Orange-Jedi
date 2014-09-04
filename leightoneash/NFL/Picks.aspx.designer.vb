@@ -32,6 +32,15 @@ Partial Public Class Picks
     Protected WithEvents txtUser As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''hfWeek control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents hfWeek As Global.System.Web.UI.WebControls.HiddenField
+
+    '''<summary>
     '''repGames control.
     '''</summary>
     '''<remarks>
@@ -75,4 +84,13 @@ Partial Public Class Picks
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents btnSubmit As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''lblMessage control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblMessage As Global.System.Web.UI.WebControls.Label
 End Class

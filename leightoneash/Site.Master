@@ -12,7 +12,7 @@
     <meta name="author" content="Leighton Eash">
     <link href="/Styles/Site.css" rel="Stylesheet" type="text/css" />
     <script src="/js/bootstrap.min.js"></script>
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
@@ -33,9 +33,15 @@
                                 <li><a class="dropdown-item" href="/Cards.aspx#PR">Pitch Rankings</a></li>
                                 <li><a class="dropdown-item" href="/Cards.aspx#Scoresheet">Pitch Scoresheet</a></li>
                                 <li><a class="dropdown-item" href="/Cards.aspx#PS">Pitch Statistics</a></li>
-                                <%--<li><a class="dropdown-item" href="/Cards/CostabiRankings.aspx">Costabi Rankings</a></li>
-                                <li><a class="dropdown-item" href="/Cards/PitchRankings.aspx">Pitch Rankings</a></li>
-                                <li><a class="dropdown-item" href="/Cards/PitchStatistics.aspx">Pitch Statistics</a></li>--%>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">NFL <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a class="dropdown-item" href="/NFL/NFL.aspx">NFL</a></li>
+                                <li><a class="dropdown-item" href="/NFL/PastWeeks.aspx">Past Weeks</a></li>
+                                <li><a class="dropdown-item" href="/NFL/Picks.aspx">Picks</a></li>
+                                <li><a class="dropdown-item" href="/NFL/Results.aspx">Results</a></li>
                             </ul>
                         </li>
                     </ul>

@@ -1,4 +1,4 @@
-﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="User.ascx.vb" Inherits="leightoneash.uctrlUser" %>
+﻿<%@ Control Language="vb" AutoEventWireup="false" CodeBehind="User.ascx.vb" Inherits="leightoneash.Admin.uctrlUser" %>
 
 <table class="user">
     <tr>

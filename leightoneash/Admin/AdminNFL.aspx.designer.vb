@@ -9,97 +9,98 @@
 
 Option Strict On
 Option Explicit On
+Namespace Admin
 
+    Partial Public Class AdminNFL
 
-Partial Public Class AdminNFL
+        '''<summary>
+        '''lblUser control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents lblUser As Global.System.Web.UI.WebControls.Label
 
-    '''<summary>
-    '''lblUser control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblUser As Global.System.Web.UI.WebControls.Label
+        '''<summary>
+        '''txtPassword control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents txtPassword As Global.System.Web.UI.WebControls.TextBox
 
-    '''<summary>
-    '''txtPassword control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtPassword As Global.System.Web.UI.WebControls.TextBox
+        '''<summary>
+        '''lblAction control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents lblAction As Global.System.Web.UI.WebControls.Label
 
-    '''<summary>
-    '''lblAction control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblAction As Global.System.Web.UI.WebControls.Label
+        '''<summary>
+        '''btnSpreads control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents btnSpreads As Global.System.Web.UI.WebControls.Button
 
-    '''<summary>
-    '''btnSpreads control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnSpreads As Global.System.Web.UI.WebControls.Button
+        '''<summary>
+        '''btnResults control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents btnResults As Global.System.Web.UI.WebControls.Button
 
-    '''<summary>
-    '''btnResults control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnResults As Global.System.Web.UI.WebControls.Button
+        '''<summary>
+        '''repGames control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents repGames As Global.System.Web.UI.WebControls.Repeater
 
-    '''<summary>
-    '''repGames control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents repGames As Global.System.Web.UI.WebControls.Repeater
+        '''<summary>
+        '''lblTotalScore control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents lblTotalScore As Global.System.Web.UI.WebControls.Label
 
-    '''<summary>
-    '''lblTotalScore control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblTotalScore As Global.System.Web.UI.WebControls.Label
+        '''<summary>
+        '''txtOverUnder control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents txtOverUnder As Global.System.Web.UI.WebControls.TextBox
 
-    '''<summary>
-    '''txtOverUnder control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtOverUnder As Global.System.Web.UI.WebControls.TextBox
+        '''<summary>
+        '''lblOverUnder control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents lblOverUnder As Global.System.Web.UI.WebControls.Label
 
-    '''<summary>
-    '''lblOverUnder control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblOverUnder As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''btnSubmit control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnSubmit As Global.System.Web.UI.WebControls.Button
-End Class
+        '''<summary>
+        '''btnSubmit control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents btnSubmit As Global.System.Web.UI.WebControls.Button
+    End Class
+End Namespace

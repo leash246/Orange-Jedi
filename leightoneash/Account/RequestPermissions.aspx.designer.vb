@@ -9,25 +9,26 @@
 
 Option Strict On
 Option Explicit On
+Namespace Account
 
+    Partial Public Class RequestPermissions
 
-Partial Public Class RequestPermissions
+        '''<summary>
+        '''txtRequest control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents txtRequest As Global.System.Web.UI.WebControls.TextBox
 
-    '''<summary>
-    '''txtRequest control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents txtRequest As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''btnRequest control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnRequest As Global.System.Web.UI.WebControls.Button
-End Class
+        '''<summary>
+        '''btnRequest control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents btnRequest As Global.System.Web.UI.WebControls.Button
+    End Class
+End Namespace

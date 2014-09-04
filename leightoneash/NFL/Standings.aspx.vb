@@ -1,12 +1,9 @@
-﻿Imports System.IO
-Imports System.Xml
-Public Class Standings
+﻿Public Class Standings
     Inherits System.Web.UI.Page
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Dim cPath As String = Server.MapPath(RelativePath("NFL", "XML/Standings.xml"))
-        Dim dt As DataTable = LoadStandings(cPath)
+        Dim dt As DataTable = LoadStandings()
         Dim dv As New DataView(dt)
-        dv.Sort = "Wins desc, Losses asc"
+        dv.Sort = "nWins desc, nLosses asc"
         dv.RowFilter = "Conference = 'NFC' and Division = 'North'"
         repNFCN.DataSource = dv
         repNFCN.DataBind()
@@ -41,10 +38,10 @@ Public Class Standings
             Dim lblLosses As Label = oItem.FindControl("lblLosses")
             Dim lblTies As Label = oItem.FindControl("lblTies")
             Dim dr As DataRowView = oItem.DataItem
-            lblTeam.Text = dr("Team")
-            lblWins.Text = dr("Wins")
-            lblLosses.Text = dr("Losses")
-            lblTies.Text = dr("Ties")
+            lblTeam.Text = dr("cTeam")
+            lblWins.Text = dr("nWins")
+            lblLosses.Text = dr("nLosses")
+            lblTies.Text = dr("nTies")
         End If
     End Sub
 

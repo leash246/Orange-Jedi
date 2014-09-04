@@ -9,8 +9,9 @@
 
 Option Strict On
 Option Explicit On
+Namespace Account
 
 
-
-Partial Public Class ChangePasswordSuccess
-End Class
+    Partial Public Class ChangePasswordSuccess
+    End Class
+End Namespace

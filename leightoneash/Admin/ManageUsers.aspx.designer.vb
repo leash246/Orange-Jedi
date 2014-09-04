@@ -9,16 +9,17 @@
 
 Option Strict On
 Option Explicit On
+Namespace Admin
 
+    Partial Public Class ManageUsers
 
-Partial Public Class ManageUsers
-
-    '''<summary>
-    '''repUsers control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents repUsers As Global.System.Web.UI.WebControls.Repeater
-End Class
+        '''<summary>
+        '''repUsers control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents repUsers As Global.System.Web.UI.WebControls.Repeater
+    End Class
+End Namespace

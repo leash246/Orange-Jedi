@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="Results.aspx.vb" Inherits="leightoneash.Results" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <link href="/Styles/NFL.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 <div>
@@ -21,4 +22,6 @@
         </ItemTemplate>
     </asp:Repeater>
 </ul>
+            <br/>
+                <asp:Label runat="server" id="lblMessage"></asp:Label>
 </asp:Content>

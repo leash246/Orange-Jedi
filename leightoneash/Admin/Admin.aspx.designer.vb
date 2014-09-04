@@ -10,6 +10,8 @@
 Option Strict On
 Option Explicit On
 
+Namespace Admin
 
-Partial Public Class Admin
-End Class
+    Partial Public Class Admin
+    End Class
+End Namespace

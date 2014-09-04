@@ -1,6 +1,4 @@
 ﻿Imports leightoneash.Schedule
-Imports System.IO
-Imports System.Xml
 Public Class NFLDefault
     Inherits System.Web.UI.Page
     Dim gmGames As New Schedule.Games

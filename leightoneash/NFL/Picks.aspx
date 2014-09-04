@@ -2,11 +2,13 @@
     CodeBehind="Picks.aspx.vb" Inherits="leightoneash.Picks" %>
 
     <%@ Register Src="~/NFL/Controls/Game.ascx" TagPrefix="uctrl" TagName="GameLine" %>
-
+    
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+    <link href="/Styles/NFL.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <asp:Label ID="lblUser" class="leftCol" runat="server" Text="User:" /><asp:TextBox ID="txtUser" runat="server" />
+    <asp:HiddenField runat="server" ID="hfWeek"/>
     <ul class="GameView" id="GameList">
         <asp:Repeater ID="repGames" runat="server">
         <HeaderTemplate>
@@ -43,5 +45,7 @@
         <br />
         <br />
             <asp:Button Text="Submit" ID="btnSubmit" runat="server" />
+            <br/>
+                <asp:Label runat="server" id="lblMessage"></asp:Label>
             </div>
 </asp:Content>

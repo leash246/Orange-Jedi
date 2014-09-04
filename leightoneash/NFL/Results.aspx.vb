@@ -1,26 +1,29 @@
 ﻿Imports System.IO
 Imports System.Xml
+Imports System.Data.SqlClient
 
 Public Class Results
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Dim cPath As String = Server.MapPath(RelativePath("NFL", "XML/Picks"))
-        If Not Directory.Exists(cPath) Then
-            Session("Error") = "No Results Found"
-            Response.Redirect("~/Error.aspx")
-        End If
         Dim i As Integer = 1
+        Dim dsPicks As New DataSet
         Do While i <= 17
-            cPath = Server.MapPath(RelativePath("NFL", "XML/Picks"))
-            cPath &= "/Week" & i.ToString
-            If Not Directory.Exists(cPath) Then
+            Dim dtPicks As DataTable
+            Dim cmd As New SqlCommand("NFL.usp_Get_Picks")
+            cmd.Parameters.AddWithValue("@nWeek", i)
+            dtPicks = FillDataTable(cmd)
+            If dtPicks.Rows.Count = 0 Then
                 Exit Do
+            Else
+                dsPicks.Tables.Add(dtPicks)
             End If
-            cPath &= "/Results.xml"
-            If File.Exists(cPath) Then
-                ddlWeeks.Items.Add(i.ToString)
-                i += 1
+            Dim dtResults As DataTable
+            cmd.Parameters.AddWithValue("@cUser", "Results")
+            dtResults = FillDataTable(cmd)
+            If dtResults.Rows.Count > 0 Then
+                    ddlWeeks.Items.Add(i.ToString)
+                    i += 1
             Else
                 Exit Do
             End If
@@ -31,8 +34,8 @@ Public Class Results
                 ddlWeeks.SelectedValue = i
                 LoadResults(i)
             Else
-                Session("Error") = "No Results Found"
-                Response.Redirect("~/Error.aspx")
+                lblMessage.Text = "No Results Found"
+                lblMessage.Style.Item("color") = "Red"
             End If
         End If
     End Sub
@@ -43,55 +46,58 @@ Public Class Results
         End If
     End Sub
     Private Sub LoadResults(nWeek As Integer)
-        Dim dtResults As New DataTable()
-        dtResults.Columns.Add("User")
-        dtResults.Columns.Add("Correct")
-        dtResults.Columns.Add("Tiebreaker")
-        Dim cPath As String = Server.MapPath(RelativePath("NFL", "XML/Picks/Week" & nWeek.ToString))
-        Dim fiResults As New FileInfo(cPath & "/Results.xml")
-        Dim xmlDocResults As New XmlDataDocument
-        Dim xmlnodeResults As XmlNodeList
+        Dim dtResults As DataTable
+        Dim dtPicks As DataTable
+        Dim cmd As New SqlCommand("NFL.usp_Get_Picks")
+        cmd.Parameters.AddWithValue("@nWeek", nWeek)
+        dtPicks = FillDataTable(cmd)
+        cmd.Parameters.AddWithValue("@cUser", "Results")
+        dtResults = FillDataTable(cmd)
         Dim i As Integer
-        Dim fsResults As FileStream = fiResults.OpenRead
-        xmlDocResults.Load(fsResults)
-        xmlnodeResults = xmlDocResults.GetElementsByTagName("Pick")
         Dim lsWinners As New List(Of String)
-        For i = 0 To xmlnodeResults.Count - 1
-            Dim strTeam As String = xmlnodeResults(i).InnerText
-            If Not lsWinners.Contains(strTeam) Then
+        Dim nScore As Integer = 0
+        For Each drResult As DataRow In dtResults.Rows
+            Dim strTeam As String = drResult.Item("cPick")
+            Dim nTieBreaker As Integer
+            Integer.TryParse(drResult("cPick"), nTieBreaker)
+            If Not lsWinners.Contains(strTeam) AndAlso nTieBreaker = 0 Then
                 lsWinners.Add(strTeam)
+            ElseIf nTieBreaker <> 0 Then
+                nScore = nTieBreaker
             End If
         Next
-        xmlnodeResults = xmlDocResults.GetElementsByTagName("Tiebreaker")
-        Dim nScore As Integer = xmlnodeResults(0).InnerText
-        Dim di As DirectoryInfo = New DirectoryInfo(cPath)
-        For Each fi As FileInfo In di.GetFiles()
-            If fi.Name <> "Results.xml" Then
-                Dim cUser As String
-                Dim nCorrect As Integer = 0
-                Dim xmldocUser As New XmlDataDocument()
-                Dim xmlnodeUser As XmlNodeList
-                Dim fs As FileStream = fi.OpenRead
-                xmldocUser.Load(fs)
-                xmlnodeUser = xmldocUser.GetElementsByTagName("User")
-                cUser = xmlnodeUser(0).InnerText
-                xmlnodeUser = xmldocUser.GetElementsByTagName("Pick")
-                For i = 0 To xmlnodeUser.Count - 1
-                    If lsWinners.Contains(xmlnodeUser(i).InnerText) Then
-                        nCorrect += 1
-                    End If
-                Next
-                xmlnodeUser = xmldocUser.GetElementsByTagName("Tiebreaker")
-                Dim nTiebreaker As Integer = xmlnodeUser(0).InnerText
-                fs.Close()
-                Dim dr As DataRow = dtResults.NewRow
-                dr.Item("User") = cUser
-                dr.Item("Correct") = nCorrect
-                dr.Item("Tiebreaker") = Math.Abs(nTiebreaker - nScore)
-                dtResults.Rows.Add(dr)
-            End If
+        Dim lsUser As New List(Of String)
+        Dim u = From dr As DataRow In dtPicks.Rows
+                Where dr.Item("cUser") <> "Results"
+                Select dr.Item("cUser")
+
+        If u.Count > 0 Then
+            For Each o As Object In u
+                If Not lsUser.Contains(o.ToString()) Then lsUser.Add(o.ToString())
+            Next
+        End If
+        Dim dtResultsList As New DataTable
+        dtResultsList.Columns.Add("User", Type.GetType("System.String"))
+        dtResultsList.Columns.Add("Correct", Type.GetType("System.Int32"))
+        dtResultsList.Columns.Add("Tiebreaker", Type.GetType("System.Decimal"))
+        For Each cUser As String In lsUser
+            Dim nCorrect As Integer = 0
+            Dim nTiebreaker As Integer = 0
+            For Each drPick As DataRow In dtPicks.Select("cUser = '" & cUser & "'")
+                If lsWinners.Contains(drPick.Item("cPick")) Then
+                    nCorrect += 1
+                ElseIf nTiebreaker = 0 Then
+                    Integer.TryParse(drPick.Item("cPick"), nTiebreaker)
+                End If
+            Next
+            Dim dr As DataRow = dtResultsList.NewRow
+            dr.Item("User") = cUser
+            dr.Item("Correct") = nCorrect
+            dr.Item("Tiebreaker") = Math.Abs(nTiebreaker - nScore)
+            dtResultsList.Rows.Add(dr)
+
         Next
-        Dim dv As New DataView(dtResults)
+        Dim dv As New DataView(dtResultsList)
         dv.Sort = "Correct desc, Tiebreaker asc"
         repResults.DataSource = dv
         repResults.DataBind()
@@ -106,7 +112,7 @@ Public Class Results
             Dim dr As DataRowView = DirectCast(oItem.DataItem, DataRowView)
             lblUser.Text = dr.Item("User")
             lblCorrect.Text = dr.Item("Correct")
-            lblTiebreaker.text = dr.Item("Tiebreaker")
+            lblTiebreaker.Text = dr.Item("Tiebreaker")
         End If
     End Sub
 End Class

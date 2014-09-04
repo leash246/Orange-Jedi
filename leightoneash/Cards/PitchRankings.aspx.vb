@@ -50,19 +50,13 @@ Public Class PitchRankings
     End Sub
     Private Sub SetTeamELO()
         If TeamOne.Count > 0 Then
-            Dim nTeamOneTotal As Integer = 0
-            For Each objPlayer As CardsPlayer In TeamOne
-                nTeamOneTotal += objPlayer.ELO
-            Next
+            Dim nTeamOneTotal As Integer = TeamOne.Sum(Function(objPlayer) objPlayer.ELO)
             TeamOneELO = nTeamOneTotal / TeamOne.Count
         Else
             TeamOneELO = 1500
         End If
         If TeamTwo.Count > 0 Then
-            Dim nTeamTwoTotal As Integer = 0
-            For Each objPlayer As CardsPlayer In TeamTwo
-                nTeamTwoTotal += objPlayer.ELO
-            Next
+            Dim nTeamTwoTotal As Integer = TeamTwo.Sum(Function(objPlayer) objPlayer.ELO)
             TeamTwoELO = nTeamTwoTotal / TeamTwo.Count
         Else
             TeamTwoELO = 1500
@@ -217,38 +211,28 @@ Public Class PitchRankings
         Dim cSubject As String = ""
         cSubject &= objUser.FirstName & " " & objUser.LastName & " has updated rankings for Pitch"
         Dim cBody As String = ""
-        Dim WinningTeam As List(Of CardsPlayer)
-        Dim LosingTeam As List(Of CardsPlayer)
+        Dim winningTeam As List(Of CardsPlayer)
+        Dim losingTeam As List(Of CardsPlayer)
         If nWinningTeam = 1 Then
-            WinningTeam = TeamOne
-            LosingTeam = TeamTwo
+            winningTeam = TeamOne
+            losingTeam = TeamTwo
         ElseIf nWinningTeam = 2 Then
-            WinningTeam = TeamTwo
-            LosingTeam = TeamOne
+            winningTeam = TeamTwo
+            losingTeam = TeamOne
         End If
         Dim strPlayers As String = ""
         If nWinningTeam <> 0 Then
-            For Each objPlayer As CardsPlayer In WinningTeam
-                strPlayers &= objPlayer.Name & "/"
-            Next
+            strPlayers = winningTeam.Aggregate(strPlayers, Function(current, objPlayer) current & (objPlayer.Name & "/"))
 
             cBody &= strPlayers.Trim("/") & " defeated "
 
-            strPlayers = ""
-            For Each objPlayer As CardsPlayer In LosingTeam
-                strPlayers &= objPlayer.Name & "/"
-            Next
+            strPlayers = losingTeam.Aggregate("", Function(current, objPlayer) current & (objPlayer.Name & "/"))
         Else
-            For Each objPlayer As CardsPlayer In TeamOne
-                strPlayers &= objPlayer.Name & "/"
-            Next
+            strPlayers = TeamOne.Aggregate(strPlayers, Function(current, objPlayer) current & (objPlayer.Name & "/"))
 
             cBody &= strPlayers.Trim("/") & " tied "
 
-            strPlayers = ""
-            For Each objPlayer As CardsPlayer In TeamTwo
-                strPlayers &= objPlayer.Name & "/"
-            Next
+            strPlayers = TeamTwo.Aggregate("", Function(current, objPlayer) current & (objPlayer.Name & "/"))
 
         End If
         cBody &= strPlayers.Trim("/") & vbCrLf & vbCrLf '"<br/><br/>"

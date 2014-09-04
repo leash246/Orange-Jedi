@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="ManageUsers.aspx.vb" Inherits="leightoneash.ManageUsers" %>
+﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="ManageUsers.aspx.vb" Inherits="leightoneash.Admin.ManageUsers" %>
 <%@ Register Src="~/Admin/User.ascx" TagPrefix="uctrl" TagName="user" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 

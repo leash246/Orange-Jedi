@@ -9,70 +9,71 @@
 
 Option Strict On
 Option Explicit On
+Namespace Admin
 
+    Partial Public Class uctrlUser
 
-Partial Public Class uctrlUser
+        '''<summary>
+        '''lblUserName control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents lblUserName As Global.System.Web.UI.WebControls.Label
 
-    '''<summary>
-    '''lblUserName control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblUserName As Global.System.Web.UI.WebControls.Label
+        '''<summary>
+        '''lblName control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents lblName As Global.System.Web.UI.WebControls.Label
 
-    '''<summary>
-    '''lblName control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblName As Global.System.Web.UI.WebControls.Label
+        '''<summary>
+        '''chkAdmin control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents chkAdmin As Global.System.Web.UI.WebControls.CheckBox
 
-    '''<summary>
-    '''chkAdmin control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents chkAdmin As Global.System.Web.UI.WebControls.CheckBox
+        '''<summary>
+        '''chkDragons control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents chkDragons As Global.System.Web.UI.WebControls.CheckBox
 
-    '''<summary>
-    '''chkDragons control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents chkDragons As Global.System.Web.UI.WebControls.CheckBox
+        '''<summary>
+        '''chkNFL control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents chkNFL As Global.System.Web.UI.WebControls.CheckBox
 
-    '''<summary>
-    '''chkNFL control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents chkNFL As Global.System.Web.UI.WebControls.CheckBox
+        '''<summary>
+        '''chkCards control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents chkCards As Global.System.Web.UI.WebControls.CheckBox
 
-    '''<summary>
-    '''chkCards control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents chkCards As Global.System.Web.UI.WebControls.CheckBox
-
-    '''<summary>
-    '''btnSave control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnSave As Global.System.Web.UI.WebControls.Button
-End Class
+        '''<summary>
+        '''btnSave control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents btnSave As Global.System.Web.UI.WebControls.Button
+    End Class
+End Namespace

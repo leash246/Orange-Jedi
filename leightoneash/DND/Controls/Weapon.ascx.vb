@@ -68,16 +68,10 @@
     End Property
     Public Property AmmoAvailable As Integer
         Get
-            Dim nCount As Integer = 0
-            For Each ri As RepeaterItem In rptAmmunitionChecks.Items
-                If ri.ItemType = ListItemType.Item Or ri.ItemType = ListItemType.AlternatingItem Then
-                    Dim chkAmmo As CheckBox = ri.FindControl("chkAmmunition")
-                    If chkAmmo.Checked Then
-                        nCount += 1
-                    End If
-                End If
-            Next
-            Return nCount
+            Return (From ri As RepeaterItem In rptAmmunitionChecks.Items _
+                    Where ri.ItemType = ListItemType.Item _
+                    Or ri.ItemType = ListItemType.AlternatingItem _
+                    Select ri.FindControl("chkAmmunition")).Count(Function(chkAmmo) DirectCast(chkAmmo, CheckBox).Checked)
         End Get
         Set(value As Integer)
             nStartingAmmo = value

@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="Change Password" Language="vb" MasterPageFile="~/Site.Master" AutoEventWireup="false"
-    CodeBehind="ChangePassword.aspx.vb" Inherits="leightoneash.ChangePassword" %>
+    CodeBehind="ChangePassword.aspx.vb" Inherits="leightoneash.Account.ChangePassword" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>

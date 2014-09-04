@@ -1,19 +1,18 @@
 ﻿Imports leightoneash.Schedule
-Imports System.IO
-Imports System.Xml
+Imports System.Data.SqlClient
+
 Public Class Picks
     Inherits System.Web.UI.Page
     Dim gmGames As New Schedule.Games
     Dim nWeek As Integer
     Dim nOverUnder As Decimal
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Dim xmldoc As New XmlDataDocument
 
-        Dim fi As FileInfo = New FileInfo(Server.MapPath(RelativePath("NFL", "XML/Standings.xml")))
-        Dim fs As FileStream = fi.OpenRead
-        xmldoc.Load(fs)
-        Dim cWeek As String = xmldoc.SelectSingleNode("Standings").Attributes("week").Value.ToString
-        Integer.TryParse(cWeek, nWeek)
+        Dim dt As DataTable = LoadStandings()
+        Dim nWeek = (From dr As DataRow In dt.Rows
+                Select dr.Item("nWeek")).Max + 1
+        hfWeek.Value = nWeek
+        lblMessage.Text = ""
         If Not IsPostBack Then
             nOverUnder = 0
             LoadWeek(nWeek, gmGames)
@@ -21,6 +20,7 @@ Public Class Picks
             repGames.DataSource = gmGames
             repGames.DataBind()
             lblOverUnder.Text = "(Over/Under " & nOverUnder & ")"
+
         End If
     End Sub
 
@@ -35,19 +35,31 @@ Public Class Picks
             Dim lblHomeTeam As Label = CType(oItem.FindControl("lblHomeTeam"), Label)
             Dim lblHomeRecord As Label = CType(oItem.FindControl("lblHomeRecord"), Label)
             Dim lblGameTime As Label = CType(oItem.FindControl("lblGameTime"), Label)
+            Dim rbtHome As RadioButton = CType(oItem.FindControl("rbtHome"), RadioButton)
+            Dim rbtAway As RadioButton = CType(oItem.FindControl("rbtAway"), RadioButton)
             lblAwayRecord.Text = g.AwayRecord
             lblAwayTeam.Text = g.AwayTeam
             lblSpread.Text = Math.Abs(Math.Round(CDec(g.Spread), 1))
             lblHomeTeam.Text = g.HomeTeam
             lblHomeRecord.Text = g.HomeRecord
-            nOverUnder = Math.Max(g.OverUnder, nOverUnder)
+            If g.OverUnder > 0 Then
+                nOverUnder += g.OverUnder
+            End If
             Dim strGameTime As String = ""
             Select Case g.Day
-                Case "T"
+                Case "T", "THU"
                     strGameTime = "Thursday"
-                Case "S"
+                    If Now.DayOfWeek <> DayOfWeek.Wednesday And Now.DayOfWeek <> DayOfWeek.Thursday And Now.DayOfWeek <> DayOfWeek.Tuesday Then
+                        rbtHome.Enabled = False
+                        rbtAway.Enabled = False
+                    End If
+                Case "S", "SUN"
                     strGameTime = "Sunday"
-                Case "M"
+                    If Now.DayOfWeek = DayOfWeek.Monday Then
+                        rbtHome.Enabled = False
+                        rbtAway.Enabled = False
+                    End If
+                Case "M", "MON"
                     strGameTime = "Monday"
             End Select
             lblGameTime.Text = String.Format("{0} {1}:{2}", strGameTime, If(Left(g.Time.ToString, 2) = 12, 12, Left(g.Time.ToString, 2) Mod 12), Right(g.Time.ToString, 2))
@@ -67,18 +79,27 @@ Public Class Picks
     Private Sub btnSubmit_Click(sender As Object, e As System.EventArgs) Handles btnSubmit.Click
         Dim lSaved As Boolean
         If txtUser.Text <> "Results" And txtUser.Text <> "" Then
-            Dim cPath As String = RelativePath("NFL", "XML/Picks/Week" & nWeek.ToString & "/")
-            Dim cFilePath As String = Server.MapPath(cPath & txtUser.Text.Trim & ".xml")
-
-            If File.Exists(cFilePath) Then
-                Session("Error") = "Picks for this week have already been submitted. Please contact Leighton to make changes."
-                lSaved = False
-            ElseIf File.Exists(Server.MapPath(cPath & "Results.xml")) Then
-                Session("Error") = "Results have already been input for week " & nWeek.ToString & ". Your selections are too late."
+            If Now.DayOfWeek = DayOfWeek.Tuesday Then
+                Session("Error") = "Picks are not allowed on Tuesdays. Please give Leighton time to input results and update the next week's spreads."
                 lSaved = False
             Else
-                VerifyServer(Server)
-                lSaved = Save(nWeek, repGames, txtUser.Text, txtOverUnder.Text)
+                If nWeek = 0 Then nWeek = hfWeek.Value
+                Dim cmd As New SqlCommand("NFL.usp_Get_Picks")
+                cmd.Parameters.AddWithValue("@nWeek", nWeek)
+                cmd.Parameters.AddWithValue("@cUser", txtUser.Text)
+                Dim dt As DataTable = FillDataTable(cmd)
+                cmd.CommandText = "NFL.usp_Get_Standings"
+                cmd.Parameters.Clear()
+                Dim dtStandings As DataTable = FillDataTable(cmd)
+                If dt.Rows.Count > 0 Then
+                    Session("Error") = "Picks for this week have already been submitted. Please contact Leighton to make changes."
+                    lSaved = False
+                ElseIf dtStandings.Select("nWeek = " & nWeek.ToString).Count > 0 Then
+                    Session("Error") = "Results have already been input for week " & nWeek.ToString & ". Your selections are too late."
+                    lSaved = False
+                Else
+                    lSaved = Save(nWeek, repGames, txtUser.Text, txtOverUnder.Text)
+                End If
             End If
         Else
             lSaved = False
@@ -87,8 +108,13 @@ Public Class Picks
             If Session("Error") Is Nothing Then
                 Session("Error") = "Something went wrong saving your picks. Please contact Leighton."
             End If
-            Response.Redirect("~/Default.aspx")
+            lblMessage.Text = Session("Error")
+            lblMessage.Style.Item("color") = "Red"
+        Else
+            lblMessage.Text = "Picks Saved!"
+            lblMessage.Style.Item("color") = "Green"
         End If
+
     End Sub
 
 End Class

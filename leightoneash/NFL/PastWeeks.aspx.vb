@@ -1,9 +1,11 @@
 ﻿Imports System.IO
 Imports System.Xml
+Imports System.Data.SqlClient
 
 Public Class PastWeeks
     Inherits System.Web.UI.Page
     Dim lsResults As List(Of String)
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
             LoadWeeks()
@@ -14,70 +16,76 @@ Public Class PastWeeks
         Try
             ddlWeeks.Items.Clear()
             ddlWeeks.Items.Add("")
-            Dim cPath As String = Server.MapPath(RelativePath("NFL", "XML/Picks"))
-            If Not Directory.Exists(cPath) Then
-                Session("Error") = "No Results Found"
-                Response.Redirect("~/Error.aspx")
-            End If
             Dim i As Integer = 1
             Do While i <= 17
-                cPath = Server.MapPath(RelativePath("NFL", "XML/Picks"))
-                cPath &= "/Week" & i.ToString
-                If Not Directory.Exists(cPath) Then
+                Dim dtWeek As DataTable
+                Dim cmd As New SqlCommand("NFL.usp_Get_Picks")
+                cmd.Parameters.AddWithValue("@nWeek", i)
+                cmd.Parameters.AddWithValue("@cUser", "Results")
+                dtWeek = FillDataTable(cmd)
+                If dtWeek.Rows.Count = 0 Then
                     Exit Do
                 End If
-                cPath &= "/Results.xml"
-                If File.Exists(cPath) Then
-                    ddlWeeks.Items.Add(i.ToString)
-                    i += 1
-                Else
-                    Exit Do
-                End If
+                ddlWeeks.Items.Add(i.ToString)
+                i += 1
             Loop
+
             i -= 1
+            If Not IsPostBack Then
+                If i > 0 Then
+                    ddlWeeks.SelectedValue = i
+                Else
+                    lblMessage.Text = "No Results Found"
+                    lblMessage.Style.Item("color") = "Red"
+                End If
+            End If
+            btnWeeks_Click(btnWeeks, Nothing)
             Return True
         Catch ex As Exception
             Return False
         End Try
     End Function
     Private Sub LoadUsers(nWeek As Integer)
+        Session("Week") = nWeek
         ddlUser.Items.Clear()
-        ddlUser.Items.Add("Results")
-        Dim cPath As String = Server.MapPath(RelativePath("NFL", "XML/Week" & nWeek.ToString))
-        Dim di As New DirectoryInfo(cPath)
-        For Each fi As FileInfo In di.GetFiles("*.xml", SearchOption.TopDirectoryOnly)
-            If fi.Name <> "Results.xml" Then
-                Dim xmlDoc As New XmlDataDocument
-                Dim xmlnode As XmlNodeList
-                Dim fsResults As FileStream = fi.OpenRead
-                xmlDoc.Load(fsResults)
-                xmlnode = xmlDoc.GetElementsByTagName("User")
-                ddlUser.Items.Add(xmlnode(0).InnerText)
-            End If
-        Next
-        ddlUser.SelectedValue = "Results"
+        Dim dtPicks As DataTable
+        Dim cmd As New SqlCommand("NFL.usp_Get_Picks")
+        cmd.Parameters.AddWithValue("@nWeek", nWeek)
+        dtPicks = FillDataTable(cmd)
+        Dim lsUser As New List(Of String)
+        Dim u = (From dr As DataRow In dtPicks.Rows
+                 Where dr.Item("cUser") <> "Results"
+                Select dr.Item("cUser")).Distinct()
 
+        ddlUser.Items.Add("Results")
+        If u.Count > 0 Then
+            For Each o As Object In u
+                ddlUser.Items.Add(o.ToString())
+            Next
+        End If
+        ddlUser.SelectedValue = "Results"
         btnUser_Click(btnUser, Nothing)
 
     End Sub
 
     Private Sub btnUser_Click(sender As Object, e As System.EventArgs) Handles btnUser.Click
         Dim cUser As String = ddlUser.SelectedValue
-        Dim cPath As String = Server.MapPath(RelativePath("NFL", "XML/Week" & ddlWeeks.SelectedValue & "/" & cUser & ".xml"))
+        Dim dtPicks As DataTable
         Dim lsPicks As New List(Of String)
-        Dim fi As New FileInfo(cPath)
-        Dim xmlDoc As New XmlDataDocument
-        Dim xmlNode As XmlNodeList
-        Dim fs As FileStream = fi.OpenRead
-        xmlDoc.Load(fs)
-        xmlNode = xmlDoc.GetElementsByTagName("Pick")
-        If cUser = "Results" Then lsResults = New List(Of String)
-        For i As Integer = 0 To xmlNode.Count - 1
-            lsPicks.Add(xmlNode(i).InnerText)
+        Dim cmd As New SqlCommand("NFL.usp_Get_Picks")
+        cmd.Parameters.AddWithValue("@nWeek", Session("Week"))
+        cmd.Parameters.AddWithValue("@cUser", cUser)
+        dtPicks = FillDataTable(cmd)
+
+        If cUser = "Results" Then
+            lsResults = New List(Of String)
+        Else
+            lsResults = Session("lsResults")
+        End If
+        For Each dr As DataRow In dtPicks.Rows
+            lsPicks.Add(dr.Item("cPick"))
             If cUser = "Results" Then
-                lsResults.Add(xmlNode(i).InnerText)
-            Else
-                lsResults = Session("lsResults")
+                lsResults.Add(dr.Item("cPick"))
             End If
         Next
         If cUser = "Results" Then Session("lsResults") = lsResults

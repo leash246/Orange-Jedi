@@ -149,14 +149,10 @@
         Next
 
         cBody &= "New ELOs:" & vbCrLf
-        For Each objPlayer As CardsPlayer In Players
-            cBody &= objPlayer.Name & ": " & objPlayer.ELO & vbCrLf
-        Next
+        cBody = Players.Aggregate(cBody, Function(current, objPlayer) current & (objPlayer.Name & ": " & objPlayer.ELO & vbCrLf))
         cBody &= vbCrLf
 
-        For Each objPlayer As CardsPlayer In Unassigned
-            cBody &= objPlayer.Name & ": " & objPlayer.ELO & vbCrLf '"<br/>"
-        Next
+        cBody = Unassigned.Aggregate(cBody, Function(current, objPlayer) current & (objPlayer.Name & ": " & objPlayer.ELO & vbCrLf))
         SendEmail(cSubject, cBody, "aschaal1263@gmail.com")
 
     End Sub
